@@ -1,3 +1,23 @@
-.title {
-  @include fz70;
+.title-huge {
+  @include title-fz48;
+}
+
+.title-medium {
+  @include title-fz32;
+}
+
+.title-small {
+  @include title-fz24;
+}
+
+.text-huge {
+  @include text-fz24;
+}
+
+.text-medium {
+  @include text-fz18;
+}
+
+.text-small {
+  @include text-fz14;
 }

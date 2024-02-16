@@ -1,6 +1,50 @@
-@mixin fz70 {
+@mixin title-fz48 {
   font-family: var(--font-family-base);
-  font-size: 70px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+  color: var(--deep-blue);
+}
+
+@mixin title-fz32 {
+  font-family: var(--font-family-base);
+  font-size: 32px;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+  color: var(--deep-blue);
+}
+
+@mixin title-fz24 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--deep-blue);
+}
+
+@mixin text-fz24 {
   font-weight: 400;
-  line-height: 1.1;
+  font-size: 24px;
+  line-height: 142%;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+}
+
+@mixin text-fz18 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 167%;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+  opacity: 0.8;
+}
+
+@mixin text-fz14 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+  opacity: 0.8;
 }

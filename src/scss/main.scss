@@ -8,7 +8,9 @@
 @import 'unitary-classes';
 
 // page components connection
+@import './components/link';
 @import './components/btn';
 
 // page blocks connection
 @import './components/header';
+@import './components/hero';

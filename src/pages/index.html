@@ -9,7 +9,42 @@
     <title>Capnia</title>
     <link
       rel="preload"
-      href="/fonts/GilroyRegular.woff2"
+      href="/fonts/WorkSansRegular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/WorkSansMedium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/WorkSansBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/BarlowRegular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/MontserratRegular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/MontserratBold.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -26,7 +61,7 @@
     <div class="site-container">
       @include('../partials/header.html')
       <main class="page__main" id="main">
-        <img src="img/logo.svg" alt="" />
+        @include('../partials/hero.html')
       </main>
       @include('../partials/footer.html')
     </div>

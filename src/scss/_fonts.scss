@@ -1,1 +1,6 @@
-@include font-face('Gilroy', '../fonts/GilroyRegular', 400, normal);
+@include font-face('WorkSans', '../fonts/WorkSansRegular', 400, normal);
+@include font-face('WorkSans', '../fonts/WorkSansMedium', 500, normal);
+@include font-face('WorkSans', '../fonts/WorkSansBold', 700, normal);
+@include font-face('Barlow', '../fonts/BarlowRegular', 400, normal);
+@include font-face('Montserrat', '../fonts/MontserratRegular', 400, normal);
+@include font-face('Montserrat', '../fonts/MontserratBold', 700, normal);

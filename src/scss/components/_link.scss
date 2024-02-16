@@ -1,0 +1,25 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 34px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-light);
+  background-color: var(--deep-blue);
+  border-radius: var(--border-radius-small);
+  transition: background-color var(--timing) ease;
+
+  @include hover {
+    background-color: var(--dark-grey);
+  }
+
+  &--yellow {
+    color: var(--deep-blue);
+    background-color: var(--yellow);
+
+    @include hover {
+      background-color: var(--yellow-light);
+    }
+  }
+}
