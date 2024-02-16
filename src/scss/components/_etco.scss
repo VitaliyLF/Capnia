@@ -1,0 +1,51 @@
+.etco {
+  padding-top: 72px;
+  padding-bottom: 127px;
+  background-color: var(--lighter-blue);
+
+  &__title {
+    @include marginBottom(137px);
+
+    margin-inline: auto;
+    max-width: 1279px;
+    text-align: center;
+  }
+
+  &__wrapper {
+    max-width: 1350px;
+    margin-inline: auto;
+    display: flex;
+    gap: 0 85px;
+    align-items: center;
+  }
+
+  &__image {
+    border-radius: var(--border-radius-medium);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: url('../img/decor-black-bg.svg') center/cover no-repeat;
+      width: 820px;
+      height: 680px;
+      z-index: -1;
+    }
+  }
+
+  &__info {
+    max-width: 535px;
+  }
+
+  &__text {
+    @include marginBottom(var(--offset-medium));
+  }
+
+  &__link {
+    padding: 12px 32px;
+  }
+}

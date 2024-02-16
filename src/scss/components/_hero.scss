@@ -1,4 +1,6 @@
 .hero {
+  padding-bottom: var(--offset-small);
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -7,6 +9,7 @@
 
   &__content {
     max-width: 664px;
+    padding-left: 16px;
   }
 
   &__title {
@@ -45,17 +48,19 @@
 
   &__link {
     padding: 12px 20px;
+    margin-top: auto;
   }
 
   &__picture {
     position: relative;
+    z-index: 1;
 
     &::after {
       content: '';
       position: absolute;
       top: 0;
       right: 0;
-      background: url('../img/hero-slider-bg-img.svg') center/cover no-repeat;
+      background: url('../img/decor-light-bg.svg') center/cover no-repeat;
       width: 820px;
       aspect-ratio: 1;
       z-index: -1;
@@ -68,27 +73,11 @@
   }
 
   .swiper {
-    &-pagination-bullet {
-      border-radius: 50%;
-      background-color: var(--light-grey);
-      padding: 16px;
-      opacity: 1;
-
-      &-active {
-        background-color: var(--light-blue);
-      }
-    }
-
-    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-    .swiper-pagination-horizontal.swiper-pagination-bullets
-      .swiper-pagination-bullet {
-      @include marginRight(var(--offset-medium));
-    }
-
-    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-    .swiper-pagination-horizontal.swiper-pagination-bullets
-      .swiper-pagination-bullet {
-      margin: 0;
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+      bottom: var(--offset-medium);
     }
   }
 }

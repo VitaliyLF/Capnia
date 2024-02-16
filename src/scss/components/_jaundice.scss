@@ -1,0 +1,66 @@
+.jaundice {
+  padding-top: 80px;
+  padding-bottom: 27px;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0 69px;
+    // justify-content: space-between;
+  }
+
+  &__info {
+    max-width: 686px;
+    flex-grow: 1;
+  }
+
+  &__title {
+    @include marginBottom(var(--offset-medium));
+  }
+
+  &__text {
+    p {
+      @include marginBottom(var(--offset-medium));
+
+      a {
+        font-weight: 700;
+        color: var(--actionable-item);
+        border-bottom: 1px solid currentColor;
+      }
+    }
+
+    ul {
+      @include marginBottom(var(--offset-medium));
+
+      list-style: disc;
+      padding-left: var(--offset-medium);
+
+      li {
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  &__inner {
+  }
+
+  &__figure {
+    max-width: 765px;
+
+    figcaption {
+      text-align: center;
+    }
+  }
+
+  &__picture {
+    @include marginBottom(88px);
+
+    display: block;
+  }
+
+  &__image {
+    border-radius: var(--border-radius-medium);
+  }
+}
