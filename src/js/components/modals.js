@@ -1,3 +1,4 @@
+import vars from '../_vars'
 import { disableScroll } from '../functions/disable-scroll'
 import { enableScroll } from '../functions/enable-scroll'
 
@@ -7,11 +8,15 @@ const closeModals = document.querySelectorAll('.js-close-modal')
 
 const openModalHundler = (modal) => {
   modal.showModal()
+  const paddingOffsetModal =
+    vars.windowEl.innerWidth - vars.documentEl.documentElement.clientWidth
+  modal.style.paddingRight = `${paddingOffsetModal}px`
   disableScroll()
 }
 
 const closeModalHundler = (modal) => {
   modal.close()
+  modal.style.paddingRight = '0'
   enableScroll()
 }
 
@@ -34,7 +39,6 @@ modals.forEach((modal) => {
 
     if (isClickedOnBackDrop) {
       closeModalHundler(dialogModal)
-      enableScroll()
     }
   })
 })
