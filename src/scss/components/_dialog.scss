@@ -1,6 +1,5 @@
 .dialog {
-  background-color: var(--lighter-blue);
-  border-radius: var(--offset-medium);
+  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,7 +9,6 @@
   display: block;
   opacity: 0;
   visibility: hidden;
-  // max-height: calc(100% - 2em - 150px);
   transform: scale(0.5);
   transition: opacity var(--timing) ease, visibility var(--timing) ease,
     background-color var(--timing) ease, transform var(--timing) ease;
@@ -26,31 +24,42 @@
     visibility: visible;
   }
 
-  &__modal-content {
-    position: relative;
-    max-width: 600px;
-    padding: 142px 50px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 58px 0;
+  }
 
-    &--consultants {
-      max-width: 1092px;
-      width: 100%;
-      padding: 64px;
-    }
+  &__inner {
+    background-color: transparent;
+  }
+
+  &__modal-content {
+    border-radius: var(--offset-medium);
+    background-color: var(--lighter-blue);
   }
 
   &__modal-close {
-    position: absolute;
-    top: -60px;
-    right: 0;
+    display: block;
+    margin-left: auto;
     width: 27px;
     aspect-ratio: 1;
     background: url(../img/modal-close-icon.svg) center/cover no-repeat;
   }
 
   &__modal-inner {
+    position: relative;
+    max-width: 600px;
+    padding: 142px 50px;
     display: flex;
     gap: 0 64px;
     justify-content: space-between;
+
+    &--consultants {
+      max-width: 1092px;
+      width: 100%;
+      padding: 64px;
+    }
   }
 
   &__modal-info {
