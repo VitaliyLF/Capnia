@@ -1,0 +1,10 @@
+.button-modal {
+  font-weight: 700;
+  color: var(--actionable-item);
+  border-bottom: 1px solid currentColor;
+  transition: color var(--timing) ease;
+
+  @include hover {
+    color: var(--deep-blue);
+  }
+}

@@ -42,6 +42,11 @@
         font-style: normal;
         color: var(--actionable-item);
         border-bottom: 1px solid currentColor;
+        transition: color var(--timing) ease;
+
+        @include hover {
+          color: var(--deep-blue);
+        }
       }
     }
   }

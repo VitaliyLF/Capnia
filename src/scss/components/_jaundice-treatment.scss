@@ -1,0 +1,33 @@
+.jaundice-treatment {
+  padding-block: 80px;
+  background-color: var(--light-yellow);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    max-width: 686px;
+  }
+
+  &__title {
+    @include marginBottom(var(--offset-medium));
+  }
+
+  &__text {
+    @include marginBottom(var(--offset-medium));
+
+    p {
+      @include marginBottom(var(--offset-small));
+    }
+  }
+
+  &__info {
+    @include marginBottom(42px);
+  }
+
+  &__link {
+    padding: 12px 35px;
+  }
+}

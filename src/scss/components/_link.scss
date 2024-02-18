@@ -8,7 +8,8 @@
   color: var(--color-light);
   background-color: var(--deep-blue);
   border-radius: var(--border-radius-small);
-  transition: background-color var(--timing) ease;
+  transition: background-color var(--timing) ease, color var(--timing) ease,
+    border var(--timing) ease;
 
   @include hover {
     background-color: var(--dark-grey);
@@ -19,7 +20,29 @@
     background-color: var(--yellow);
 
     @include hover {
-      background-color: var(--yellow-light);
+      background-color: var(--light-yellow-hover);
+    }
+  }
+
+  &--light-blue {
+    color: var(--deep-blue);
+    background-color: var(--light-blue);
+
+    @include hover {
+      color: var(--color-light);
+      background-color: var(--deep-blue);
+    }
+  }
+
+  &--stroke {
+    background-color: transparent;
+    border: 1px solid var(--deep-blue);
+    color: currentColor;
+
+    @include hover {
+      background-color: transparent;
+      border: 1px solid var(--light-blue);
+      color: var(--light-blue);
     }
   }
 }

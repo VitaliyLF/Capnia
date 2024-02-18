@@ -1,0 +1,25 @@
+.researches {
+  padding-block: 80px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    max-width: 686px;
+  }
+
+  &__title {
+    @include marginBottom(var(--offset-medium));
+  }
+
+  &__text {
+    @include marginBottom(var(--offset-medium));
+  }
+
+  &__image {
+    border-radius: var(--border-radius-medium);
+  }
+}

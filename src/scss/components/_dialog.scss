@@ -1,0 +1,75 @@
+.dialog {
+  background-color: var(--lighter-blue);
+  border-radius: var(--offset-medium);
+  inset-block-start: 0;
+  inset-block-end: 0;
+  // display: block;
+  display: table;
+  box-shadow: 0 0 0 100vmax var(--dark-grey);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--timing) ease, visibility var(--timing) ease,
+    background-color var(--timing) ease;
+
+  &[open] {
+    opacity: 1;
+    visibility: visible;
+    // overflow: visible;
+  }
+
+  &::backdrop {
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__modal-content {
+    position: relative;
+    max-width: 600px;
+    padding: 142px 50px;
+
+    &--consultants {
+      max-width: 1092px;
+      width: 100%;
+      padding: 64px;
+    }
+  }
+
+  &__modal-close {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    width: 27px;
+    aspect-ratio: 1;
+    background: url(../img/modal-close-icon.svg) center/cover no-repeat;
+    z-index: 1000;
+  }
+
+  &__modal-inner {
+    display: flex;
+    gap: 0 64px;
+    justify-content: space-between;
+  }
+
+  &__modal-info {
+    max-width: 300px;
+  }
+
+  &__modal-text {
+    @include marginBottom(var(--offset-medium));
+
+    a {
+      font-weight: 700;
+      color: var(--actionable-item);
+      border-bottom: 1px solid currentColor;
+      transition: color var(--timing) ease;
+
+      @include hover {
+        color: var(--deep-blue);
+      }
+    }
+
+    &--consultants {
+      max-width: 600px;
+    }
+  }
+}

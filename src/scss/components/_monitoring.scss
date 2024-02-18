@@ -1,4 +1,4 @@
-.etco {
+.monitoring {
   padding-top: 72px;
   padding-bottom: 127px;
   background-color: var(--lighter-blue);
@@ -21,20 +21,20 @@
 
   &__image {
     border-radius: var(--border-radius-medium);
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+    // position: relative;
+    // z-index: 1;
+    // overflow: hidden;
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background: url('../img/decor-black-bg.svg') center/cover no-repeat;
-      width: 820px;
-      height: 680px;
-      z-index: -1;
-    }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   background: url('../img/decor-black-bg.svg') center/cover no-repeat;
+    //   width: 820px;
+    //   height: 680px;
+    //   z-index: -1;
+    // }
   }
 
   &__info {

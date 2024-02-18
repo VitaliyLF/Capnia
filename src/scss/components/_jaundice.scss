@@ -1,12 +1,12 @@
 .jaundice {
   padding-top: 80px;
-  padding-bottom: 27px;
+  padding-bottom: 77px;
 
   &__wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0 69px;
-    // justify-content: space-between;
   }
 
   &__info {
@@ -21,12 +21,6 @@
   &__text {
     p {
       @include marginBottom(var(--offset-medium));
-
-      a {
-        font-weight: 700;
-        color: var(--actionable-item);
-        border-bottom: 1px solid currentColor;
-      }
     }
 
     ul {
@@ -43,10 +37,17 @@
     }
   }
 
-  &__inner {
+  &__swiper {
+    width: 100%;
+  }
+
+  &__swiper-pagination {
+    // position: static;
   }
 
   &__figure {
+    display: flex;
+    flex-direction: column;
     max-width: 765px;
 
     figcaption {
@@ -62,5 +63,14 @@
 
   &__image {
     border-radius: var(--border-radius-medium);
+  }
+
+  .swiper {
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+      bottom: 108px;
+    }
   }
 }

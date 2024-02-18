@@ -26,7 +26,57 @@
             Prior to ETCOc tests, increased production of neurotoxic
             unconjugated bilirubin was difficult to detect until symptoms were
             evident, putting newborns at elevated risk for
-            <a href="">kernicterus</a> and requiring immediate phototherapy.
+            <button
+              class="jaundice__button button-modal js-open-modal"
+              type="button"
+              aria-label="Open kernicterus modal"
+              title="Open kernicterus modal"
+            >
+              kernicterus
+            </button>
+            and requiring immediate phototherapy.
+            <dialog
+              class="jaundice__dialog dialog js-modal"
+              aria-labelledby="dialog-header-kernicterus"
+              aria-describedby="dialog-content-kernicterus"
+            >
+              <div class="dialog__modal-content">
+                <button
+                  class="dialog__modal-close js-close-modal"
+                  type="button"
+                  aria-label="Close kernicterus modal"
+                  title="Close kernicterus modal"
+                  autofocus
+                ></button>
+                <h3
+                  class="dialog__modal-title visually-hidden"
+                  id="dialog-header-kernicterus"
+                >
+                  Adverse Neurodevelopmental Outcomes and Risk Factors
+                  Associated with Neonatal Jaundice
+                </h3>
+                <div
+                  class="dialog__modal-text text-medium"
+                  id="dialog-content-kernicterus"
+                >
+                  <p>
+                    Adverse neurodevelopmental outcomes from jaundice may
+                    include Kernicterus (KI), Low IQ, auditory anomalies, and
+                    respiratory failure.
+                  </p>
+                  <p>
+                    KI is a life-threatening condition caused by Bilirubin
+                    toxicity to parts of the brain. Short hospital stays
+                    contribute to KI cases as newborns are discharged at 48-72
+                    hours after birth while TsB peaks at 3-5 days of age, making
+                    bilirubin management an outpatient problem. Other risk
+                    factors include the failure to check bilirubin or diagnose a
+                    hemolytic condition in jaundiced infants in first 24 hours
+                    and the failure to recognize risk factors.
+                  </p>
+                </div>
+              </div>
+            </dialog>
           </p>
         </div>
       </div>
@@ -34,16 +84,18 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <figure class="jaundice__figure text-medium">
-              <picture class="jaundice__picture" width="765" height="430">
-                <source srcset="img/jaundice-step-1.webp" type="image/webp" />
+              <picture class="jaundice__picture">
+                <source
+                  srcset="img/jaundice-img/jaundice-step-1.webp"
+                  type="image/webp"
+                />
                 <img
                   loading="lazy"
-                  src="img/jaundice-step-1.jpg"
+                  src="img/jaundice-img/jaundice-step-1.jpg"
                   class="jaundice__image"
                   width="765"
                   height="430"
-                  alt="The first step is the destruction of the red blood cell. The carbon monoxide
-                are released into the bloodstream."
+                  alt="Stage one - the red blood cell breaks down, bilirubin and carbon monoxide enter the bloodstream."
                 />
               </picture>
               <figcaption>
@@ -55,42 +107,118 @@
           <div class="swiper-slide">
             <figure class="jaundice__figure text-medium">
               <picture class="jaundice__picture">
-                <source srcset="img/jaundice-step-2.webp" type="image/webp" />
+                <source
+                  srcset="img/jaundice-img/jaundice-step-2.webp"
+                  type="image/webp"
+                />
                 <img
                   loading="lazy"
-                  src="img/jaundice-step-2.jpg"
+                  src="img/jaundice-img/jaundice-step-2.jpg"
                   class="jaundice__image"
                   width="765"
                   height="430"
-                  alt="second step carbon monoxide combines with hemoglobin and is exhaled through the lungs."
+                  alt="Stage two - The carbon monoxide conjugates with hemoglobin and is exhaled through the lungs."
                 />
               </picture>
               <figcaption>
-                When a red blood cell lyses, bilirubin and carbon monoxide are
-                released into the bloodstream.
+                The carbon monoxide conjugates with hemoglobin and is exhaled
+                through the lungs.
               </figcaption>
             </figure>
           </div>
           <div class="swiper-slide">
             <figure class="jaundice__figure text-medium">
               <picture class="jaundice__picture">
-                <source srcset="img/jaundice-step-3.webp" type="image/webp" />
+                <source
+                  srcset="img/jaundice-img/jaundice-step-3.webp"
+                  type="image/webp"
+                />
                 <img
                   loading="lazy"
-                  src="img/jaundice-step-3.jpg"
+                  src="img/jaundice-img/jaundice-step-3.jpg"
                   class="jaundice__image"
                   width="765"
                   height="430"
-                  alt="Stage 3 Bilirubin is conjugated in the liver and excreted from the body."
+                  alt="Stage three - The bilirubin is conjugated in the liver and excreted"
                 />
               </picture>
               <figcaption>
-                When a red blood cell lyses, bilirubin and carbon monoxide are
-                released into the bloodstream.
+                The bilirubin is conjugated in the liver and excreted. The
+                newborn liver can manage a normal level of hemolysis.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure class="jaundice__figure text-medium">
+              <picture class="jaundice__picture">
+                <source
+                  srcset="img/jaundice-img/jaundice-step-4.webp"
+                  type="image/webp"
+                />
+                <img
+                  loading="lazy"
+                  src="img/jaundice-img/jaundice-step-4.jpg"
+                  class="jaundice__image"
+                  width="765"
+                  height="430"
+                  alt="Stage four - hemolysis rises, the liver is unable to keep pace with bilirubin production."
+                />
+              </picture>
+              <figcaption>
+                But if the rate of hemolysis rises, the liver is unable to keep
+                pace with bilirubin production.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure class="jaundice__figure text-medium">
+              <picture class="jaundice__picture">
+                <source
+                  srcset="img/jaundice-img/jaundice-step-5.webp"
+                  type="image/webp"
+                />
+                <img
+                  loading="lazy"
+                  src="img/jaundice-img/jaundice-step-5.jpg"
+                  class="jaundice__image"
+                  width="765"
+                  height="430"
+                  alt="Stage five - Accumulated bilirubin may pass through the blood-brain barrier to the central nervous system, creating neurologic damage."
+                />
+              </picture>
+              <figcaption>
+                At high levels, accumulating unconjugated bilirubin may pass
+                through the blood-brain barrier to the central nervous system,
+                creating neurologic damage.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure class="jaundice__figure text-medium">
+              <picture class="jaundice__picture">
+                <source
+                  srcset="img/jaundice-img/jaundice-step-6.webp"
+                  type="image/webp"
+                />
+                <img
+                  loading="lazy"
+                  src="img/jaundice-img/jaundice-step-6.jpg"
+                  class="jaundice__image"
+                  width="765"
+                  height="430"
+                  alt="With CoSense, hemolysis is detected and monitored to manage jaundice interventions."
+                />
+              </picture>
+              <figcaption>
+                The best indicator of active hemolysis can be measured from
+                exhaled breath through elevated end-tidal carbon monoxide (ETCO)
+                levels. With CoSense, hemolysis is detected and monitored to
+                manage jaundice interventions.
               </figcaption>
             </figure>
           </div>
         </div>
+        <div class="jaundice__swiper-pagination swiper-pagination"></div>
       </div>
     </div>
   </div>
