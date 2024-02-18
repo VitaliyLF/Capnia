@@ -34,6 +34,7 @@ modals.forEach((modal) => {
 
     if (isClickedOnBackDrop) {
       closeModalHundler(dialogModal)
+      enableScroll()
     }
   })
 })
