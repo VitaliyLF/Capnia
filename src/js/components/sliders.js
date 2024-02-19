@@ -41,7 +41,6 @@ const bannerSwiper = new Swiper(_vars.heroSliderEl, {
 const jaundiceSwiper = new Swiper(_vars.jaundiceSliderEl, {
   slidesPerView: 1,
   speed: 500,
-  // spaceBetween: gap,
   effect: 'fade',
   fadeEffect: {
     crossFade: true,
