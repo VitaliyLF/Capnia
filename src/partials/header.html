@@ -19,7 +19,29 @@
           </a>
         </li>
         <li class="header__nav-item">
-          <a href="#" class="header__nav-link">Clinical Resources</a>
+          <button
+            class="header__nav-link js-btn-dropdown"
+            type="button"
+            aria-label="Open submenu navigation"
+            title="Open submenu navigation"
+          >
+            Clinical Resources
+          </button>
+          <div class="dropdown">
+            <ul class="dropdown__list">
+              <li class="dropdown__item">
+                <a class="dropdown__link" href="#"
+                  ><span class="dropdown__link-text">CoSense</span>Studies</a
+                >
+              </li>
+              <li class="dropdown__item">
+                <a class="dropdown__link" href="#">Bibliography</a>
+              </li>
+              <li class="dropdown__item">
+                <a class="dropdown__link" href="#">Guidelines</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <li class="header__nav-item">
           <a href="#" class="header__nav-link">About Us</a>

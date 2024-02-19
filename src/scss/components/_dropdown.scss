@@ -1,0 +1,46 @@
+.dropdown {
+  background-color: var(--light-grey);
+  padding: var(--offset-medium);
+  position: absolute;
+  margin-top: var(--offset-medium);
+  top: 100%;
+  right: calc(var(--offset-medium) * -1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--timing) ease-in-out,
+    visibility var(--timing) ease-in-out;
+  z-index: var(--dropdown-nav-z-index);
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__item {
+    @include marginBottom(var(--offset-small));
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    color: var(--deep-blue);
+    transition: color var(--timing) ease;
+
+    @include hover {
+      color: var(--dark-grey);
+    }
+  }
+
+  &__link-text {
+    position: relative;
+    font-style: italic;
+    font-size: 14px;
+
+    &::after {
+      content: '®';
+      padding-right: 4px;
+      font-style: normal;
+    }
+  }
+}
