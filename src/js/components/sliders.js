@@ -1,18 +1,20 @@
 import _vars from '../_vars'
 import Swiper from 'swiper'
-import { Pagination, A11y, Keyboard, Parallax } from 'swiper/modules'
+import { Pagination, A11y, Keyboard, EffectFade } from 'swiper/modules'
 
-Swiper.use([Pagination, A11y, Keyboard, Parallax])
+Swiper.use([Pagination, A11y, Keyboard, EffectFade])
 
 const bodyStyle = window.getComputedStyle(document.body)
 const gap = parseInt(bodyStyle.getPropertyValue('--offset-large'))
 
 const bannerSwiper = new Swiper(_vars.heroSliderEl, {
-  slidesPerView: 1,
-  speed: 2000,
-  spaceBetween: gap,
-  simulateTouch: false,
-  parallax: true,
+  modules: [Pagination, A11y, Keyboard, EffectFade],
+  slidesPerView: 'auto',
+  speed: 500,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
   pagination: {
     el: '.hero__swiper-pagination',
     type: 'bullets',
@@ -31,12 +33,19 @@ const bannerSwiper = new Swiper(_vars.heroSliderEl, {
     onlyInViewport: true,
     pageUpDown: true,
   },
+  on: {
+    slideChange: function () {},
+  },
 })
 
 const jaundiceSwiper = new Swiper(_vars.jaundiceSliderEl, {
   slidesPerView: 1,
-  speed: 1500,
-  spaceBetween: gap,
+  speed: 500,
+  // spaceBetween: gap,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
   pagination: {
     el: '.jaundice__swiper-pagination',
     type: 'bullets',
