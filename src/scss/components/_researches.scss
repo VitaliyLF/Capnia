@@ -1,5 +1,6 @@
 .researches {
   padding-block: 80px;
+  overflow: hidden;
 
   &__container {
     display: flex;
@@ -8,7 +9,9 @@
   }
 
   &__content {
+    position: relative;
     max-width: 686px;
+    z-index: 3;
   }
 
   &__title {
@@ -17,6 +20,22 @@
 
   &__text {
     @include marginBottom(var(--offset-medium));
+  }
+
+  &__images {
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100px;
+      right: 170px;
+      background: url('../img/decor-light-bg.svg') center/cover no-repeat;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
   }
 
   &__image {

@@ -50,8 +50,6 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "graph-modal": "^1.0.4",
-    "graph-tabs": "^1.0.0",
     "inputmask": "^5.0.7",
     "just-validate": "^3.3.3",
     "swiped-events": "^1.1.6",

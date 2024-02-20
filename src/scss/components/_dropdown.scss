@@ -11,9 +11,19 @@
     visibility var(--timing) ease-in-out;
   z-index: var(--dropdown-nav-z-index);
 
+  @include big-desktop {
+    margin-top: 0;
+    padding: 32px 0 0 32px;
+    background-color: transparent;
+  }
+
   &--active {
     opacity: 1;
     visibility: visible;
+
+    @include big-desktop {
+      position: static;
+    }
   }
 
   &__item {
@@ -30,6 +40,10 @@
     @include hover {
       color: var(--dark-grey);
     }
+
+    @include big-desktop {
+      @include title-fz32;
+    }
   }
 
   &__link-text {
@@ -41,6 +55,10 @@
       content: '®';
       padding-right: 4px;
       font-style: normal;
+    }
+
+    @include big-desktop {
+      @include title-fz32;
     }
   }
 }

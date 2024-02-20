@@ -3,8 +3,8 @@
   background-color: var(--light-yellow);
 
   &__container {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
   }
 
   &__content {
@@ -29,5 +29,18 @@
 
   &__link {
     padding: 12px 35px;
+  }
+
+  .swiper-wrapper {
+    // justify-content: space-between;
+  }
+
+  .swiper-slide {
+    max-width: 686px;
+    // width: 100%;
+
+    @include big-desktop {
+      max-width: 100%;
+    }
   }
 }
