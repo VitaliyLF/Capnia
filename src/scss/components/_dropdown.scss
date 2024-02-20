@@ -12,6 +12,8 @@
   z-index: var(--dropdown-nav-z-index);
 
   @include big-desktop {
+    position: static;
+    display: none;
     margin-top: 0;
     padding: 32px 0 0 32px;
     background-color: transparent;
@@ -22,7 +24,7 @@
     visibility: visible;
 
     @include big-desktop {
-      position: static;
+      display: block;
     }
   }
 
