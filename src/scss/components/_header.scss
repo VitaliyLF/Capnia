@@ -12,11 +12,10 @@
     @include big-desktop {
       position: fixed;
       top: var(--header-height);
-      left: 0;
+      right: 100%;
       width: 100vw;
       height: calc(100dvh - var(--header-height));
       padding: 54px 15px;
-      translate: -120% 0;
       background-color: var(--color-light);
       transition: translate 0.5s ease;
       overflow-y: auto;
@@ -27,7 +26,7 @@
     }
 
     &--active {
-      translate: 0;
+      translate: 100% 0;
     }
   }
 
