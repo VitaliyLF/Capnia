@@ -2,9 +2,9 @@
   padding-block: 80px;
   background-color: var(--light-yellow);
 
-  &__container {
-    // display: flex;
-    // justify-content: space-between;
+  @include mobile {
+    padding-top: var(--offset-medium);
+    padding-bottom: var(--offset-medium-large);
   }
 
   &__content {
@@ -31,16 +31,12 @@
     padding: 12px 35px;
   }
 
-  .swiper-wrapper {
-    // justify-content: space-between;
-  }
-
   .swiper-slide {
     max-width: 686px;
-    // width: 100%;
 
-    @include big-desktop {
+    @include tablet {
       max-width: 100%;
+      width: 100%;
     }
   }
 }

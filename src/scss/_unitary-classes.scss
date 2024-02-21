@@ -1,17 +1,37 @@
 .title-huge {
   @include title-fz48;
+
+  @include big-desktop {
+    font-size: 32px;
+    line-height: 125%;
+  }
 }
 
 .title-medium {
   @include title-fz32;
+
+  @include big-desktop {
+    font-size: 24px;
+    line-height: 142%;
+  }
 }
 
 .title-small {
   @include title-fz24;
+
+  @include big-desktop {
+    font-size: 18px;
+    line-height: 167%;
+  }
 }
 
 .text-huge {
   @include text-fz24;
+
+  @include big-desktop {
+    font-size: 18px;
+    line-height: 167%;
+  }
 }
 
 .text-medium {

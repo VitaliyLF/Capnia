@@ -4,7 +4,12 @@
 
   &__container {
     display: flex;
-    justify-content: space-between;
+    gap: 0 84px;
+
+    @include big-desktop {
+      flex-direction: column;
+      gap: var(--offset-medium-large) 0;
+    }
   }
 
   &__aside {
@@ -13,6 +18,10 @@
     max-width: 360px;
     width: 100%;
     height: 100%;
+
+    @include big-desktop {
+      position: static;
+    }
   }
 
   &__wrapper {
@@ -20,12 +29,21 @@
     justify-content: space-between;
     max-width: 1028px;
     width: 100%;
+
+    @include big-desktop {
+      max-width: 100%;
+    }
   }
 
   &__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 64px;
+    gap: var(--offset-large);
+
+    @include big-desktop {
+      flex-wrap: nowrap;
+      gap: var(--offset-medium);
+    }
   }
 
   &__item {
@@ -50,6 +68,6 @@
   }
 
   &__button {
-    padding: 11px 32px;
+    padding: 11px var(--offset-medium);
   }
 }

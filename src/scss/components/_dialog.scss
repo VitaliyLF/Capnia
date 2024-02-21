@@ -27,24 +27,48 @@
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 58px 0;
+    gap: var(--offset-large) 0;
+
+    @include mobile {
+      flex-direction: row;
+      gap: 0;
+    }
   }
 
   &__inner {
     background-color: transparent;
+
+    @include mobile {
+      position: absolute;
+      top: var(--offset-medium);
+      right: var(--offset-medium);
+      z-index: 10;
+    }
   }
 
   &__modal-content {
     border-radius: var(--offset-medium);
     background-color: var(--lighter-blue);
+
+    @include mobile {
+      border-radius: 0;
+    }
   }
 
   &__modal-close {
     display: block;
     margin-left: auto;
+  }
+
+  &__modal-icon {
+    display: block;
     width: 27px;
     aspect-ratio: 1;
-    background: url(../img/modal-close-icon.svg) center/cover no-repeat;
+    fill: var(--color-light);
+
+    @include mobile {
+      fill: var(--color-black);
+    }
   }
 
   &__modal-inner {
@@ -58,7 +82,12 @@
     &--consultants {
       max-width: 1092px;
       width: 100%;
-      padding: 64px;
+      padding: var(--offset-large);
+    }
+
+    @include mobile {
+      padding: 109px var(--offset-medium) 193px var(--offset-medium);
+      max-width: 100%;
     }
   }
 

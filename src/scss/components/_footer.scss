@@ -3,13 +3,18 @@
   padding-bottom: 35px;
   background-color: var(--deep-blue);
 
+  @include mobile {
+    padding-top: var(--offset-medium);
+    padding-bottom: var(--offset-medium-large);
+  }
+
   &__container {
-    max-width: 790px;
+    max-width: 886px;
   }
 
   &__logo {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: var(--offset-medium-large);
   }
 
   &__logo-link {
@@ -18,13 +23,29 @@
 
   &__wrapper {
     display: flex;
-    justify-content: space-between;
+    gap: 0 338px;
     margin-bottom: 62px;
+
+    @include big-desktop {
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    @include mobile {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 53px 0;
+    }
   }
 
   &__social {
     display: flex;
     flex-direction: column;
+
+    @include mobile {
+      padding-right: var(--offset-medium-large);
+    }
   }
 
   &__social-item {
@@ -32,6 +53,8 @@
   }
 
   &__social-link {
+    padding-left: var(--offset-medium-large);
+
     &--careers {
       text-decoration: underline;
     }
@@ -44,7 +67,7 @@
         content: '';
         position: absolute;
         top: 50%;
-        right: calc(100% + var(--offset-medium));
+        left: 0;
         translate: 0 -50%;
         width: var(--offset-medium);
         aspect-ratio: 1;
@@ -60,11 +83,16 @@
 
   &__contact-link {
     @include marginBottom(var(--offset-medium));
+
+    padding-left: var(--offset-medium-large);
   }
 
   .footer-contact-item {
+    --icon-width: var(--offset-medium);
+
     @include marginBottom(var(--offset-medium));
 
+    padding-left: var(--offset-medium-large);
     font-weight: 400;
     font-size: 18px;
     line-height: 167%;
@@ -76,13 +104,13 @@
       content: '';
       position: absolute;
       top: 50%;
-      right: calc(100% + 19px);
+      left: 0;
       translate: 0 -50%;
     }
 
     &--address {
       &::after {
-        width: 32px;
+        width: var(--icon-width);
         height: 43px;
         background: url(../img/address-icon.svg) center/cover no-repeat;
       }
@@ -90,7 +118,7 @@
 
     &--tel {
       &::after {
-        width: 32px;
+        width: var(--icon-width);
         aspect-ratio: 1;
         background: url(../img/phone-icon.svg) center/cover no-repeat;
       }
@@ -98,7 +126,7 @@
 
     &--email {
       &::after {
-        width: 32px;
+        width: var(--icon-width);
         height: 24px;
         background: url(../img/email-icon.svg) center/cover no-repeat;
       }
@@ -107,7 +135,7 @@
 
   &__contact-address {
     font-style: normal;
-    max-width: 195px;
+    max-width: 245px;
   }
 
   &__contact-descr {
@@ -125,11 +153,17 @@
   &__info {
     display: flex;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--offset-medium) 0;
+    }
   }
 
   &__info-content {
     display: flex;
-    gap: 0 16px;
+    gap: 0 var(--offset-small);
 
     a {
       transition: color var(--timing) ease;

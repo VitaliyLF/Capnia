@@ -2,16 +2,33 @@
   padding-block: 80px;
   overflow: hidden;
 
+  @include mobile {
+    padding-top: var(--offset-medium);
+    padding-bottom: var(--offset-medium-large);
+  }
+
   &__container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 0 88px;
+
+    @include big-desktop {
+      flex-direction: column-reverse;
+      gap: 50px 0;
+    }
   }
 
   &__content {
     position: relative;
     max-width: 686px;
     z-index: 3;
+
+    @include big-desktop {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__title {
@@ -35,6 +52,20 @@
       width: 100%;
       height: 100%;
       z-index: -2;
+    }
+
+    @include big-desktop {
+      &::after {
+        top: -100px;
+        right: 0;
+        height: 820px;
+      }
+    }
+
+    @include mobile {
+      &::after {
+        height: 540px;
+      }
     }
   }
 

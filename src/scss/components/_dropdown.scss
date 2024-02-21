@@ -15,7 +15,7 @@
     position: static;
     display: none;
     margin-top: 0;
-    padding: 32px 0 0 32px;
+    padding: var(--offset-medium) 0 0 var(--offset-medium);
     background-color: transparent;
   }
 
@@ -46,6 +46,12 @@
     @include big-desktop {
       @include title-fz32;
     }
+
+    @include mobile {
+      @include title-fz24;
+
+      font-weight: 700;
+    }
   }
 
   &__link-text {
@@ -61,6 +67,12 @@
 
     @include big-desktop {
       @include title-fz32;
+    }
+
+    @include mobile {
+      @include title-fz24;
+
+      font-weight: 700;
     }
   }
 }

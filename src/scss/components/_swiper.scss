@@ -4,7 +4,7 @@
   &-pagination-bullet {
     border-radius: 50%;
     background-color: var(--light-grey);
-    padding: 16px;
+    padding: var(--offset-small);
     opacity: 1;
 
     &-active {
@@ -16,6 +16,10 @@
   .swiper-pagination-horizontal.swiper-pagination-bullets
     .swiper-pagination-bullet {
     @include marginRight(var(--offset-medium));
+
+    @include mobile {
+      @include marginRight(var(--offset-small));
+    }
   }
 
   .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,

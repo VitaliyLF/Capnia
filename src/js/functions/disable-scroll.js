@@ -1,9 +1,6 @@
-import vars from '../_vars'
-
 export const disableScroll = () => {
-  const paddingOffset =
-    vars.windowEl.innerWidth - vars.documentEl.documentElement.clientWidth
-  vars.bodyEl.classList.add('scroll-lock')
-  vars.bodyEl.style.paddingRight = `${paddingOffset}px`
-  vars.bodyEl.style.scrollBehavior = 'unset'
+  const paddingOffset = window.innerWidth - document.documentElement.clientWidth
+  document.body.classList.add('scroll-lock')
+  document.body.style.paddingRight = `${paddingOffset}px`
+  document.body.style.scrollBehavior = 'unset'
 }
