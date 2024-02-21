@@ -71,7 +71,7 @@
         translate: 0 -50%;
         width: var(--offset-medium);
         aspect-ratio: 1;
-        background: url(/img/linkedIn-icon.svg) center/cover no-repeat;
+        background: url(../img/linkedIn-icon.svg) center/cover no-repeat;
       }
     }
   }
@@ -112,7 +112,7 @@
       &::after {
         width: var(--icon-width);
         height: 43px;
-        background: url(/img/address-icon.svg) center/cover no-repeat;
+        background: url(../img/address-icon.svg) center/cover no-repeat;
       }
     }
 
@@ -120,7 +120,7 @@
       &::after {
         width: var(--icon-width);
         aspect-ratio: 1;
-        background: url(/img/phone-icon.svg) center/cover no-repeat;
+        background: url(../img/phone-icon.svg) center/cover no-repeat;
       }
     }
 
@@ -128,7 +128,7 @@
       &::after {
         width: var(--icon-width);
         height: 24px;
-        background: url(/img/email-icon.svg) center/cover no-repeat;
+        background: url(../img/email-icon.svg) center/cover no-repeat;
       }
     }
   }
