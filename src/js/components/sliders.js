@@ -14,7 +14,7 @@ const gapMedium = parseInt(bodyStyle.getPropertyValue('--offset-medium'))
 
 Swiper.use([Pagination, A11y, Keyboard, Autoplay, EffectFade])
 
-new Swiper('.hero__swiper', {
+new Swiper('.page-hero__swiper', {
   modules: [Pagination, A11y, Keyboard, Autoplay, EffectFade],
   slidesPerView: 'auto',
   speed: 500,
@@ -24,12 +24,12 @@ new Swiper('.hero__swiper', {
   fadeEffect: {
     crossFade: true,
   },
-  autoplay: {
-    delay: 2400,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2400,
+  //   disableOnInteraction: false,
+  // },
   pagination: {
-    el: '.hero__swiper-pagination',
+    el: '.page-hero__swiper-pagination',
     type: 'bullets',
     clickable: true,
   },
