@@ -1,6 +1,10 @@
 .page-hero {
   padding-bottom: var(--offset-small);
 
+  &--products {
+    background-color: var(--light-yellow);
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -109,6 +113,10 @@
 
   &__image {
     border-radius: 50%;
+
+    &--products {
+      border-radius: 0;
+    }
   }
 
   .swiper {

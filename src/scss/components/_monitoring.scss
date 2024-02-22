@@ -4,6 +4,11 @@
   background-color: var(--lighter-blue);
   overflow: hidden;
 
+  &--products {
+    padding-block: var(--offset-medium-huge);
+    background-color: var(--color-light);
+  }
+
   @include big-desktop {
     padding-bottom: var(--offset-medium-large);
   }
@@ -57,6 +62,12 @@
       z-index: -2;
     }
 
+    &--products {
+      &::after {
+        display: none;
+      }
+    }
+
     @include big-desktop {
       margin-bottom: var(--offset-medium-huge);
 
@@ -94,6 +105,15 @@
 
   &__text {
     @include marginBottom(var(--offset-medium));
+
+    p {
+      @include marginBottom(var(--offset-medium));
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: var(--offset-medium);
+    }
   }
 
   &__link {
