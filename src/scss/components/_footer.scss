@@ -1,6 +1,6 @@
 .footer {
-  padding-top: 52px;
-  padding-bottom: 35px;
+  padding-top: var(--offset-large);
+  padding-bottom: var(--offset-medium);
   background-color: var(--deep-blue);
 
   @include mobile {
@@ -24,7 +24,7 @@
   &__wrapper {
     display: flex;
     gap: 0 338px;
-    margin-bottom: 62px;
+    margin-bottom: var(--offset-large);
 
     @include big-desktop {
       gap: 0;
@@ -35,7 +35,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      gap: 53px 0;
+      gap: var(--offset-large) 0;
     }
   }
 

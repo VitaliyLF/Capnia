@@ -10,6 +10,7 @@ import {
 const bodyStyle = window.getComputedStyle(document.body)
 const gapLarge = parseInt(bodyStyle.getPropertyValue('--offset-large'))
 const gapMedium = parseInt(bodyStyle.getPropertyValue('--offset-medium'))
+const gapHuge = parseInt(bodyStyle.getPropertyValue('--offset-huge'))
 
 Swiper.use([Pagination, A11y, Keyboard, Autoplay, EffectFade])
 
@@ -113,7 +114,7 @@ new Swiper('.jaundice-treatment__swiper', {
     },
     1024: {
       slidesPerView: 2,
-      spaceBetween: 128,
+      spaceBetween: gapHuge,
     },
   },
 })

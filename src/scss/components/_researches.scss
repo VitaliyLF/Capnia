@@ -1,5 +1,5 @@
 .researches {
-  padding-block: 80px;
+  padding-block: var(--offset-medium-huge);
   overflow: hidden;
 
   @include mobile {
@@ -10,11 +10,11 @@
   &__container {
     display: flex;
     align-items: center;
-    gap: 0 88px;
+    gap: 0 var(--offset-medium-huge);
 
     @include big-desktop {
       flex-direction: column-reverse;
-      gap: 50px 0;
+      gap: var(--offset-medium-large) 0;
     }
   }
 

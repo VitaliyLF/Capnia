@@ -1,5 +1,5 @@
 .jaundice-treatment {
-  padding-block: 80px;
+  padding-block: var(--offset-medium-huge);
   background-color: var(--light-yellow);
 
   @include mobile {
@@ -28,7 +28,7 @@
   }
 
   &__link {
-    padding: 12px 35px;
+    padding: 12px var(--offset-medium);
   }
 
   .swiper-slide {

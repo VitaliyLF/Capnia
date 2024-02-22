@@ -1,6 +1,6 @@
 .jaundice {
-  padding-top: 80px;
-  padding-bottom: 77px;
+  padding-top: var(--offset-medium-huge);
+  padding-bottom: var(--offset-large);
 
   @include mobile {
     padding-top: var(--offset-medium);

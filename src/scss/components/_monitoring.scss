@@ -1,6 +1,6 @@
 .monitoring {
-  padding-top: 72px;
-  padding-bottom: 127px;
+  padding-top: var(--offset-medium-huge);
+  padding-bottom: var(--offset-huge);
   background-color: var(--lighter-blue);
   overflow: hidden;
 
@@ -32,7 +32,7 @@
     max-width: 1350px;
     margin-inline: auto;
     display: flex;
-    gap: 0 85px;
+    gap: 0 var(--offset-medium-huge);
     align-items: center;
 
     @include big-desktop {
@@ -58,7 +58,7 @@
     }
 
     @include big-desktop {
-      margin-bottom: 72px;
+      margin-bottom: var(--offset-medium-huge);
 
       &::after {
         top: 50%;

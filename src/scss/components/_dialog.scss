@@ -74,9 +74,9 @@
   &__modal-inner {
     position: relative;
     max-width: 600px;
-    padding: 142px 50px;
+    padding: var(--offset-huge) var(--offset-large);
     display: flex;
-    gap: 0 64px;
+    gap: 0 var(--offset-large);
     justify-content: space-between;
 
     &--consultants {
@@ -86,7 +86,7 @@
     }
 
     @include mobile {
-      padding: 109px var(--offset-medium) 193px var(--offset-medium);
+      padding: 108px var(--offset-medium) 192px var(--offset-medium);
       max-width: 100%;
     }
   }

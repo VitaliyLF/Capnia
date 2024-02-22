@@ -4,7 +4,6 @@
 
   @include mobile {
     margin-bottom: 0;
-    padding-block: 20px;
   }
 
   &__container {
@@ -20,7 +19,7 @@
       right: 100%;
       width: 100vw;
       height: calc(100dvh - var(--header-height));
-      padding: 54px 15px;
+      padding: var(--offset-large) var(--offset-small);
       background-color: var(--color-light);
       transition: translate 0.5s ease;
       overflow-y: auto;
@@ -59,7 +58,6 @@
 
   &__nav-link {
     font-weight: 700;
-    font-size: 15px;
     line-height: 150%;
     letter-spacing: -0.01em;
     color: var(--deep-blue);
@@ -80,7 +78,6 @@
     &--contact {
       display: block;
       padding: 12px var(--offset-medium);
-      font-size: 16px;
       color: var(--color-light);
       background-color: var(--deep-blue);
       border-radius: var(--border-radius-small);

@@ -1,10 +1,10 @@
 .consultants {
-  padding-block: 120px;
+  padding-block: var(--offset-huge);
   background-color: var(--lighter-blue);
 
   &__container {
     display: flex;
-    gap: 0 84px;
+    gap: 0 var(--offset-medium-huge);
 
     @include big-desktop {
       flex-direction: column;
