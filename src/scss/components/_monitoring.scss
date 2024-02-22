@@ -62,12 +62,6 @@
       z-index: -2;
     }
 
-    &--products {
-      &::after {
-        display: none;
-      }
-    }
-
     @include big-desktop {
       margin-bottom: var(--offset-medium-huge);
 
@@ -82,6 +76,16 @@
     @include mobile {
       &::after {
         width: 520px;
+      }
+    }
+
+    &--products {
+      &::after {
+        display: none;
+      }
+
+      @include big-desktop {
+        margin-bottom: var(--offset-medium);
       }
     }
   }

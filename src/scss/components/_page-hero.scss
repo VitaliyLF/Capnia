@@ -2,7 +2,9 @@
   padding-bottom: var(--offset-small);
 
   &--products {
+    padding-top: var(--offset-small);
     background-color: var(--light-yellow);
+    padding-bottom: 0;
   }
 
   &__wrapper {
@@ -96,6 +98,11 @@
     position: relative;
     padding: var(--offset-large);
 
+    &--products {
+      mix-blend-mode: multiply;
+      padding: var(--offset-medium-huge);
+    }
+
     @include mobile {
       padding: var(--offset-medium);
     }
@@ -109,6 +116,14 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+
+    &--products {
+      top: 0;
+      left: 0;
+      translate: 0 0;
+      width: auto;
+      height: 100%;
+    }
   }
 
   &__image {

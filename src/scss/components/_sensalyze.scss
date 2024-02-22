@@ -1,0 +1,29 @@
+.sensalyze {
+  padding-top: var(--offset-medium-huge);
+  padding-bottom: var(--offset-medium-large);
+  background-color: var(--color-light);
+
+  &__wrapper {
+    max-width: 1091px;
+    margin-inline: auto;
+  }
+
+  &__iframe {
+    width: 100%;
+    margin-bottom: var(--offset-medium-huge);
+  }
+
+  &__text {
+    max-width: 800px;
+    margin-inline: auto;
+
+    p {
+      @include marginBottom(var(--offset-medium));
+
+      span {
+        display: inline-block;
+        font-style: italic;
+      }
+    }
+  }
+}

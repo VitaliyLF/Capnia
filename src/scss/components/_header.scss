@@ -1,6 +1,11 @@
 .header {
+  height: var(--header-height);
   padding-block: var(--offset-small);
   margin-bottom: var(--offset-medium);
+
+  &--products {
+    margin-bottom: 0;
+  }
 
   @include mobile {
     margin-bottom: 0;

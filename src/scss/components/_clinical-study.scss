@@ -1,0 +1,46 @@
+.clinical-study {
+  padding-block: var(--offset-medium-huge);
+  background-color: var(--light-yellow);
+
+  &__container {
+    max-width: 800px;
+  }
+
+  &__title {
+    @include marginBottom(var(--offset-medium));
+  }
+
+  &__text {
+    margin-bottom: var(--offset-medium-huge);
+
+    p {
+      @include marginBottom(var(--offset-medium));
+    }
+
+    span {
+      display: inline-block;
+      font-style: italic;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    margin-bottom: var(--offset-medium);
+
+    span {
+      display: inline-block;
+      font-style: italic;
+    }
+  }
+
+  &__link {
+    padding: 11px 22px;
+  }
+}

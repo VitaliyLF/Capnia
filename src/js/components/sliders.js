@@ -1,6 +1,7 @@
 import Swiper from 'swiper'
 import {
   Pagination,
+  Navigation,
   A11y,
   Keyboard,
   Autoplay,
@@ -12,10 +13,10 @@ const gapHuge = parseInt(bodyStyle.getPropertyValue('--offset-huge'))
 const gapLarge = parseInt(bodyStyle.getPropertyValue('--offset-large'))
 const gapMedium = parseInt(bodyStyle.getPropertyValue('--offset-medium'))
 
-Swiper.use([Pagination, A11y, Keyboard, Autoplay, EffectFade])
+Swiper.use([Pagination, Navigation, A11y, Keyboard, Autoplay, EffectFade])
 
 new Swiper('.page-hero__swiper', {
-  modules: [Pagination, A11y, Keyboard, Autoplay, EffectFade],
+  modules: [Pagination, Navigation, A11y, Keyboard, Autoplay, EffectFade],
   slidesPerView: 'auto',
   speed: 500,
   simulateTouch: false,
@@ -182,4 +183,49 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     },
   })
+})
+
+new Swiper('.hemolytic-status__swiper', {
+  speed: 500,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+  autoplay: {
+    delay: 2400,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: '.hemolytic-status__next',
+  },
+  a11y: {
+    enabled: true,
+    prevSlideMessage: 'Previous slide',
+    nextSlideMessage: 'Next slide',
+    firstSlideMessage: 'This is the first slide',
+    lastSlideMessage: 'This is the last slide',
+    paginationBulletMessage: 'Go to slide {{index}}',
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+    pageUpDown: true,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.2,
+      spaceBetween: gapMedium,
+    },
+    576: {
+      slidesPerView: 1.3,
+    },
+    768: {
+      slidesPerView: 1.4,
+      spaceBetween: gapLarge,
+    },
+    1024: {
+      slidesPerView: 1,
+      spaceBetween: gapHuge,
+    },
+  },
 })
