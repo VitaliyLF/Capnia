@@ -48,7 +48,20 @@ new Swiper('.page-hero__swiper', {
     pageUpDown: true,
   },
   on: {
-    slideChange: function () {},
+    slideChange: function () {
+      const activeSlideIndexHeroSlider = this.activeIndex
+      const heroSlides = this.slides
+
+      heroSlides.forEach((slide, index) => {
+        const decorImage = slide.querySelector('.page-hero__decor')
+
+        if (index === activeSlideIndexHeroSlider) {
+          decorImage.style.transform = 'rotate(15deg)'
+        } else {
+          decorImage.style.transform = ''
+        }
+      })
+    },
   },
 })
 
@@ -56,7 +69,6 @@ new Swiper('.jaundice__swiper', {
   slidesPerView: 1,
   speed: 500,
   simulateTouch: false,
-  autoHeight: true,
   effect: 'fade',
   fadeEffect: {
     crossFade: true,
@@ -197,6 +209,7 @@ new Swiper('.hemolytic-status__swiper', {
   },
   navigation: {
     nextEl: '.hemolytic-status__next',
+    prevEl: '.hemolytic-status__prev',
   },
   a11y: {
     enabled: true,
@@ -226,6 +239,25 @@ new Swiper('.hemolytic-status__swiper', {
     1024: {
       slidesPerView: 1,
       spaceBetween: gapHuge,
+    },
+  },
+  on: {
+    init: function () {
+      const prevButton = document.querySelector('.hemolytic-status__prev')
+      prevButton.style.opacity = '0'
+      prevButton.style.visibility = 'hidden'
+    },
+    slideChange: function () {
+      const activeSlideIndexHemolyticSlider = this.activeIndex
+      const prevButton = document.querySelector('.hemolytic-status__prev')
+
+      if (activeSlideIndexHemolyticSlider !== 0) {
+        prevButton.style.opacity = '1'
+        prevButton.style.visibility = 'visible'
+      } else {
+        prevButton.style.opacity = '0'
+        prevButton.style.visibility = 'hidden'
+      }
     },
   },
 })

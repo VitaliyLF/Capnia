@@ -2,16 +2,35 @@
   padding-block: var(--offset-medium-huge);
   background-color: var(--light-yellow);
 
+  @include mobile {
+    padding-top: var(--offset-medium);
+    padding-bottom: var(--offset-medium-large);
+  }
+
   &__container {
     max-width: 800px;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   &__title {
     @include marginBottom(var(--offset-medium));
+
+    @include title-fz24;
+
+    @include mobile {
+      @include marginBottom(var(--offset-small));
+    }
   }
 
   &__text {
     margin-bottom: var(--offset-medium-huge);
+
+    @include mobile {
+      margin-bottom: var(--offset-medium);
+    }
 
     p {
       @include marginBottom(var(--offset-medium));
@@ -31,6 +50,9 @@
   }
 
   &__subtitle {
+    @include title-fz24;
+
+    text-align: center;
     text-transform: uppercase;
     margin-bottom: var(--offset-medium);
 

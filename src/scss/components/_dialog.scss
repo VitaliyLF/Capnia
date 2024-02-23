@@ -108,6 +108,8 @@
   &__modal-text {
     @include marginBottom(var(--offset-medium));
 
+    font-family: var(--font-family-accent);
+
     a {
       font-weight: 700;
       color: var(--actionable-item);

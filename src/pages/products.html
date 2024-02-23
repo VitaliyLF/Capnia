@@ -37,14 +37,7 @@
     />
     <link
       rel="preload"
-      href="fonts/MontserratRegular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="fonts/MontserratBold.woff2"
+      href="fonts/BarlowBold.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -55,12 +48,12 @@
   </head>
 
   <body class="page__body">
-    <a class="skiplink" href="#main" data-scroll data-menu-item
+    <a class="skiplink" href="#main-product" data-scroll data-menu-item
       >Go to main content</a
     >
     <div class="site-container">
       @include('../partials/header.html')
-      <main class="page__main" id="main">
+      <main class="page__main" id="main-product">
         @include('../partials/page-hero-products.html')
         @include('../partials/monitoring-products.html')
         @include('../partials/hemolytic-status.html')
