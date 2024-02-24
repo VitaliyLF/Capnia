@@ -4,28 +4,20 @@ class Accordion {
       isOpen: () => {},
       isClose: () => {},
       speed: 300,
-      isControlEnabled: true,
     }
 
     this.options = Object.assign(defaultOptions, options)
     this.accordion = document.querySelector(selector)
     this.control = this.accordion.querySelector('.accordion__control')
     this.content = this.accordion.querySelector('.accordion__content')
-    this.isControlEnabled = this.options.isControlEnabled
     this.event()
     this.start()
   }
 
   start() {
     if (this.accordion) {
-      if (!this.accordion.classList.contains('is-open')) {
-        this.close()
-      } else {
+      if (this.accordion.classList.contains('is-open')) {
         this.open()
-        if (this.isControlEnabled) {
-          this.control.classList.add('active')
-          this.control.textContent = 'Свернуть'
-        }
       }
     }
   }
@@ -33,20 +25,12 @@ class Accordion {
   event() {
     if (this.accordion) {
       this.accordion.addEventListener('click', (e) => {
-        this.accordion.classList.toggle('is-open')
+        this.accordion.classList.toggle('open')
 
-        if (this.accordion.classList.contains('is-open')) {
+        if (this.accordion.classList.contains('open')) {
           this.open()
-          if (this.isControlEnabled) {
-            this.control.classList.add('active')
-            this.control.textContent = 'Свернуть'
-          }
         } else {
           this.close()
-          if (this.isControlEnabled) {
-            this.control.classList.remove('active')
-            this.control.textContent = 'Подробнее'
-          }
         }
       })
     }
@@ -73,4 +57,32 @@ class Accordion {
   }
 }
 
-export { Accordion }
+if (document.querySelector('.clinical-resources-info')) {
+  new Accordion('.js-accordion-1', {
+    speed: 400,
+  })
+
+  new Accordion('.js-accordion-2', {
+    speed: 400,
+  })
+
+  new Accordion('.js-accordion-3', {
+    speed: 400,
+  })
+
+  new Accordion('.js-accordion-4', {
+    speed: 400,
+  })
+
+  new Accordion('.js-accordion-5', {
+    speed: 400,
+  })
+
+  new Accordion('.js-accordion-6', {
+    speed: 400,
+  })
+
+  new Accordion('.js-accordion-7', {
+    speed: 400,
+  })
+}

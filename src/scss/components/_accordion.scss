@@ -1,0 +1,62 @@
+.accordion {
+  --accordion-time: 0.3s;
+  --accordion-icon-width: 18px;
+  --accordion-icon-height: 24px;
+  --accordion-icon-rotate: 90deg;
+
+  &__control {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-medium-small);
+    padding: var(--accordion-icon-width) var(--accordion-icon-height);
+    text-align: left;
+    width: 100%;
+    white-space: normal;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__info {
+    max-width: 650px;
+  }
+
+  &__content {
+    margin-top: calc(var(--accordion-icon-width) * -1);
+    padding: var(--accordion-icon-width) var(--accordion-icon-height);
+    background-color: var(--color-light);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height var(--accordion-time) ease-out,
+      opacity var(--accordion-time) ease-out,
+      visibility var(--accordion-time) ease-out,
+      padding var(--accordion-time) ease-out;
+    will-change: max-height;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: var(--accordion-icon-width);
+    right: var(--accordion-icon-height);
+    width: var(--accordion-icon-width);
+    height: var(--accordion-icon-height);
+    background: url('../img/accordion-angle.svg') center/cover no-repeat;
+    transition: rotate var(--accordion-time) ease-out;
+  }
+
+  &.is-open {
+    .accordion__icon {
+      rotate: var(--accordion-icon-rotate);
+    }
+
+    .accordion__content {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.clinical-resources {
+  padding-top: var(--offset-medium-huge);
+  padding-bottom: var(--offset-huge);
+  background-color: var(--lighter-blue);
+
+  &__wrapper {
+    max-width: 752px;
+  }
+
+  &__title {
+    @include marginBottom(var(--offset-medium));
+  }
+
+  &__list {
+    display: flex;
+    gap: 0 var(--offset-large);
+    margin-bottom: var(--offset-medium-large);
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 187%;
+    letter-spacing: -0.01em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: var(--deep-blue);
+    transition: color var(--timing) ease;
+
+    &--active {
+      color: var(--dark-grey);
+    }
+
+    @include hover {
+      color: var(--yellow);
+    }
+  }
+
+  &__text {
+    max-width: 663px;
+  }
+}

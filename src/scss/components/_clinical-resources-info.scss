@@ -1,0 +1,63 @@
+.clinical-resources-info {
+  padding-top: var(--offset-medium-large);
+  padding-bottom: var(--offset-huge);
+  background-color: var(--light-yellow);
+
+  &__container {
+    max-width: 945px;
+  }
+
+  &__title {
+    @include marginBottom(var(--offset-medium));
+
+    font-weight: 700;
+  }
+
+  &__item {
+    @include marginBottom(var(--offset-medium));
+  }
+
+  &__subitem {
+    @include marginBottom(var(--offset-medium));
+  }
+
+  &__text {
+    @include marginBottom(var(--offset-medium));
+
+    font-weight: 700;
+    border-radius: var(--border-radius-medium-small);
+    background-color: var(--yellow);
+    padding: 6px 22px;
+  }
+
+  &__accordion {
+    &:not(:last-of-type) {
+      @include marginBottom(var(--offset-medium));
+    }
+
+    .accordion__content {
+      p {
+        @include marginBottom(var(--offset-small));
+      }
+
+      ul {
+        @include marginBottom(var(--offset-small));
+
+        list-style: disc;
+        padding-left: var(--offset-medium);
+      }
+
+      li {
+        @include marginBottom(var(--offset-small));
+      }
+
+      b {
+        @include marginBottom(var(--offset-small));
+      }
+
+      span {
+        font-style: italic;
+      }
+    }
+  }
+}
