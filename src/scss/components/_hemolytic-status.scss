@@ -2,12 +2,23 @@
   padding-block: var(--offset-medium-huge);
   background-color: var(--lighter-blue);
 
+  @include mobile {
+    padding-top: var(--offset-medium);
+    padding-bottom: var(--offset-medium-large);
+  }
+
   &__container {
     max-width: 1340px;
+
+    @include big-desktop {
+      max-width: 100%;
+    }
   }
 
   &__title {
     @include marginBottom(var(--offset-large));
+
+    @include title-fz24;
 
     max-width: 1110px;
     margin-inline: auto;
@@ -17,12 +28,28 @@
       display: inline-block;
       font-style: italic;
     }
+
+    @include mobile {
+      @include marginBottom(var(--offset-medium));
+    }
   }
 
   &__swiper {
-    overflow: visible;
-    max-width: 733px;
+    max-width: 917px;
     margin-bottom: var(--offset-large);
+
+    @include big-desktop {
+      max-width: 100%;
+    }
+  }
+
+  &__figure {
+    max-width: 733px;
+    margin-inline: auto;
+
+    @include big-desktop {
+      max-width: 100%;
+    }
   }
 
   &__next,
@@ -30,9 +57,10 @@
     width: var(--offset-large);
     height: var(--offset-large);
     top: 50%;
-    right: -92px;
+    right: 0;
     translate: 0 -50%;
     transition: opacity var(--timing) ease, visibility var(--timing) ease;
+    z-index: 10000;
 
     &::before {
       content: '';
@@ -45,10 +73,14 @@
     &::after {
       display: none;
     }
+
+    @include big-desktop {
+      display: none;
+    }
   }
 
   &__prev {
-    left: -92px;
+    left: 0;
 
     &::before {
       background: url('../img/products-arrow-slider-left.svg') center/cover
@@ -59,6 +91,14 @@
   &__image {
     border-radius: var(--border-radius-medium);
     margin-bottom: var(--offset-medium);
+
+    @include big-desktop {
+      width: 100%;
+    }
+
+    @include mobile {
+      margin-bottom: var(--offset-small);
+    }
   }
 
   &__figcaption {
@@ -79,11 +119,16 @@
       font-weight: 500;
       color: var(--deep-blue);
     }
+
+    @include big-desktop {
+      max-width: 100%;
+    }
   }
 
   &__info {
-    margin-bottom: var(--offset-medium);
+    @include title-fz24;
 
+    margin-bottom: var(--offset-medium);
     text-align: center;
 
     span {
@@ -108,6 +153,10 @@
 
     span {
       font-style: italic;
+    }
+
+    @include mobile {
+      max-width: 100%;
     }
   }
 }

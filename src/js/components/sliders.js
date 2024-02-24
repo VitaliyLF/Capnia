@@ -16,10 +16,9 @@ const gapMedium = parseInt(bodyStyle.getPropertyValue('--offset-medium'))
 Swiper.use([Pagination, Navigation, A11y, Keyboard, Autoplay, EffectFade])
 
 new Swiper('.page-hero__swiper', {
-  modules: [Pagination, Navigation, A11y, Keyboard, Autoplay, EffectFade],
   slidesPerView: 'auto',
-  speed: 500,
   simulateTouch: false,
+  speed: 500,
   autoHeight: true,
   effect: 'fade',
   fadeEffect: {
@@ -68,7 +67,6 @@ new Swiper('.page-hero__swiper', {
 new Swiper('.jaundice__swiper', {
   slidesPerView: 1,
   speed: 500,
-  simulateTouch: false,
   effect: 'fade',
   fadeEffect: {
     crossFade: true,
@@ -108,11 +106,6 @@ new Swiper('.jaundice-treatment__swiper', {
     lastSlideMessage: 'This is the last slide',
     paginationBulletMessage: 'Go to slide {{index}}',
   },
-  keyboard: {
-    enabled: true,
-    onlyInViewport: true,
-    pageUpDown: true,
-  },
   breakpoints: {
     320: {
       slidesPerView: 1.2,
@@ -128,27 +121,19 @@ new Swiper('.jaundice-treatment__swiper', {
     1024: {
       slidesPerView: 2,
       spaceBetween: gapHuge,
+      simulateTouch: true,
     },
   },
 })
 
 window.addEventListener('DOMContentLoaded', () => {
-  const resizableSwiper = (
-    breakpoint,
-    swiperClass,
-    swiperSettings,
-    callback
-  ) => {
+  const resizableSwiper = (breakpoint, swiperClass, swiperSettings) => {
     let swiper
 
     breakpoint = window.matchMedia(breakpoint)
 
     const enableSwiper = function (className, settings) {
       swiper = new Swiper(className, settings)
-
-      if (callback) {
-        callback(swiper)
-      }
     }
 
     const checker = function () {
@@ -167,7 +152,6 @@ window.addEventListener('DOMContentLoaded', () => {
   resizableSwiper('(max-width: 1370px)', '.consultants__swiper', {
     speed: 500,
     slidesPerGroup: 1,
-    simulateTouch: false,
     a11y: {
       enabled: true,
       prevSlideMessage: 'Previous slide',
@@ -192,6 +176,7 @@ window.addEventListener('DOMContentLoaded', () => {
       1024: {
         slidesPerView: 2.5,
         spaceBetween: gapLarge,
+        simulateTouch: true,
       },
     },
   })
@@ -199,14 +184,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 new Swiper('.hemolytic-status__swiper', {
   speed: 500,
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-  autoplay: {
-    delay: 2400,
-    disableOnInteraction: false,
-  },
   navigation: {
     nextEl: '.hemolytic-status__next',
     prevEl: '.hemolytic-status__prev',
@@ -226,19 +203,19 @@ new Swiper('.hemolytic-status__swiper', {
   },
   breakpoints: {
     320: {
-      slidesPerView: 1.2,
-      spaceBetween: gapMedium,
-    },
-    576: {
       slidesPerView: 1.3,
     },
-    768: {
+    576: {
       slidesPerView: 1.4,
-      spaceBetween: gapLarge,
     },
     1024: {
+      slidesPerView: 1.5,
+      navigation: false,
+      spaceBetween: gapMedium,
+    },
+    1370: {
       slidesPerView: 1,
-      spaceBetween: gapHuge,
+      spaceBetween: 0,
     },
   },
   on: {
