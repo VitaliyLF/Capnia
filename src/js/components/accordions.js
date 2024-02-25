@@ -8,6 +8,7 @@ class Accordion {
 
     this.options = Object.assign(defaultOptions, options)
     this.accordion = document.querySelector(selector)
+    if (!this.accordion) return
     this.control = this.accordion.querySelector('.accordion__control')
     this.content = this.accordion.querySelector('.accordion__content')
     this.event()
@@ -15,16 +16,14 @@ class Accordion {
   }
 
   start() {
-    if (this.accordion) {
-      if (this.accordion.classList.contains('is-open')) {
-        this.open()
-      }
+    if (this.accordion.classList.contains('is-open')) {
+      this.open()
     }
   }
 
   event() {
-    if (this.accordion) {
-      this.accordion.addEventListener('click', (e) => {
+    if (this.control && this.content) {
+      this.control.addEventListener('click', (e) => {
         this.accordion.classList.toggle('open')
 
         if (this.accordion.classList.contains('open')) {
@@ -57,32 +56,22 @@ class Accordion {
   }
 }
 
-if (document.querySelector('.clinical-resources-info')) {
-  new Accordion('.js-accordion-1', {
-    speed: 400,
-  })
+document.addEventListener('DOMContentLoaded', function () {
+  const accordionsItems = [
+    '.js-accordion-1',
+    '.js-accordion-2',
+    '.js-accordion-3',
+    '.js-accordion-4',
+    '.js-accordion-5',
+    '.js-accordion-6',
+    '.js-accordion-7',
+    '.js-accordion-8',
+    '.js-accordion-9',
+  ]
 
-  new Accordion('.js-accordion-2', {
-    speed: 400,
+  accordionsItems.forEach((accordion) => {
+    new Accordion(accordion, {
+      speed: 400,
+    })
   })
-
-  new Accordion('.js-accordion-3', {
-    speed: 400,
-  })
-
-  new Accordion('.js-accordion-4', {
-    speed: 400,
-  })
-
-  new Accordion('.js-accordion-5', {
-    speed: 400,
-  })
-
-  new Accordion('.js-accordion-6', {
-    speed: 400,
-  })
-
-  new Accordion('.js-accordion-7', {
-    speed: 400,
-  })
-}
+})

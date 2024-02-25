@@ -3,18 +3,37 @@
   padding-bottom: var(--offset-huge);
   background-color: var(--lighter-blue);
 
+  @include mobile {
+    padding-top: var(--offset-medium);
+    padding-bottom: var(--offset-medium-large);
+  }
+
   &__wrapper {
     max-width: 752px;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   &__title {
     @include marginBottom(var(--offset-medium));
+
+    @include big-desktop {
+      display: none;
+    }
   }
 
   &__list {
     display: flex;
     gap: 0 var(--offset-large);
     margin-bottom: var(--offset-medium-large);
+
+    @include big-desktop {
+      flex-direction: column;
+      gap: var(--offset-small) 0;
+      margin-bottom: var(--offset-medium);
+    }
   }
 
   &__link {

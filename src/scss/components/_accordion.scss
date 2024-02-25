@@ -1,7 +1,5 @@
 .accordion {
   --accordion-time: 0.3s;
-  --accordion-icon-width: 18px;
-  --accordion-icon-height: 24px;
   --accordion-icon-rotate: 90deg;
 
   &__control {
@@ -10,10 +8,18 @@
     flex-direction: column;
     background-color: var(--color-light);
     border-radius: var(--border-radius-medium-small);
-    padding: var(--accordion-icon-width) var(--accordion-icon-height);
+    padding: 18px 24px;
     text-align: left;
     width: 100%;
     white-space: normal;
+
+    &--guidelines {
+      background-color: var(--light-yellow);
+    }
+
+    @include mobile {
+      padding: var(--offset-small) var(--offset-medium);
+    }
   }
 
   &__title {
@@ -22,11 +28,23 @@
 
   &__info {
     max-width: 650px;
+
+    span {
+      font-style: italic;
+    }
+
+    @include small-tablet {
+      max-width: 450px;
+    }
+
+    @include mobile {
+      max-width: 265px;
+    }
   }
 
   &__content {
-    margin-top: calc(var(--accordion-icon-width) * -1);
-    padding: var(--accordion-icon-width) var(--accordion-icon-height);
+    margin-top: -18px;
+    padding: 18px 24px;
     background-color: var(--color-light);
     overflow: hidden;
     max-height: 0;
@@ -37,16 +55,27 @@
       visibility var(--accordion-time) ease-out,
       padding var(--accordion-time) ease-out;
     will-change: max-height;
+
+    &--guidelines {
+      background-color: var(--light-yellow);
+    }
   }
 
   &__icon {
     position: absolute;
-    bottom: var(--accordion-icon-width);
-    right: var(--accordion-icon-height);
-    width: var(--accordion-icon-width);
-    height: var(--accordion-icon-height);
+    bottom: 18px;
+    right: 24px;
+    width: 18px;
+    height: 24px;
     background: url('../img/accordion-angle.svg') center/cover no-repeat;
     transition: rotate var(--accordion-time) ease-out;
+
+    @include mobile {
+      width: 16px;
+      height: 22px;
+      bottom: 16px;
+      right: 22px;
+    }
   }
 
   &.is-open {

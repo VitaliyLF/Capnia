@@ -11,9 +11,6 @@
   // border-color
   --border-color-dark: var(--color-dark);
 
-  // letter-spacing
-  --letter-spacing-small: 1.6px;
-
   // header height
   --header-height: 80px;
 
@@ -27,7 +24,5 @@
   --preloader-z-index: 1001;
   --header-nav-z-index: 10;
   --dropdown-nav-z-index: 200;
-
-  // overlay
-  --overlay-shadow: rgba(0, 0, 0, 0.6);
+  --to-top-z-index: 300;
 }

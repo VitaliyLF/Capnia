@@ -19,7 +19,7 @@ new Swiper('.page-hero__swiper', {
   slidesPerView: 'auto',
   simulateTouch: false,
   speed: 500,
-  autoHeight: true,
+  // autoHeight: true,
   effect: 'fade',
   fadeEffect: {
     crossFade: true,
@@ -127,22 +127,31 @@ new Swiper('.jaundice-treatment__swiper', {
 })
 
 window.addEventListener('DOMContentLoaded', () => {
-  const resizableSwiper = (breakpoint, swiperClass, swiperSettings) => {
+  const resizableSwiper = (
+    breakpoint,
+    swiperClass,
+    swiperSettings,
+    callback
+  ) => {
     let swiper
 
     breakpoint = window.matchMedia(breakpoint)
 
     const enableSwiper = function (className, settings) {
       swiper = new Swiper(className, settings)
+
+      if (callback) {
+        callback(swiper)
+      }
     }
 
     const checker = function () {
       if (breakpoint.matches) {
         return enableSwiper(swiperClass, swiperSettings)
+      } else {
+        if (swiper !== undefined) swiper.destroy(true, true)
+        return
       }
-
-      swiper && swiper.destroy(true, true)
-      return
     }
 
     breakpoint.addEventListener('change', checker)
