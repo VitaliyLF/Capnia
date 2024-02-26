@@ -11,6 +11,15 @@
     background-color: var(--color-light);
   }
 
+  &--cosense-studies {
+    background-color: var(--color-light);
+    padding-bottom: var(--offset-medium);
+
+    @include mobile {
+      padding-block: var(--offset-medium);
+    }
+  }
+
   @include mobile {
     padding-block: var(--offset-medium);
   }
@@ -148,6 +157,130 @@
 
       span {
         font-style: italic;
+      }
+    }
+  }
+
+  &__search {
+    @include marginBottom(var(--offset-medium-large));
+  }
+
+  &__form {
+    position: relative;
+    max-width: 654px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 40px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 133%;
+    color: var(--color-black);
+    padding-left: var(--offset-small);
+    padding-right: var(--offset-medium-large);
+    background-color: var(--seacrh-grey);
+    transition: background-color var(--timing) ease;
+
+    &::placeholder {
+      color: currentColor;
+    }
+
+    &.focus-visible {
+      background-color: var(--light-blue);
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    translate: 0 -50%;
+    width: 30px;
+    height: 30px;
+    background: url('../img/search-input-icon.svg') center/cover no-repeat;
+    z-index: var(--seacrh-btn-z-index);
+  }
+
+  &__table {
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+  }
+
+  &__table-thead {
+    border-bottom: 1px solid var(--light-grey);
+
+    th {
+      border-right: 1px solid var(--light-grey);
+      padding: 12px;
+      font-weight: 700;
+      color: var(--color-black);
+      background-color: var(--light-yellow);
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__table-tbody {
+    tr {
+      border-bottom: 1px solid var(--light-grey);
+
+      @include tablet {
+        @include marginBottom(48px);
+
+        display: flex;
+        flex-direction: column;
+        border-bottom: none;
+      }
+
+      &:nth-child(even) {
+        background-color: var(--lighter-blue);
+      }
+
+      td {
+        position: relative;
+        padding: 12px;
+        border-right: 1px solid var(--light-grey);
+
+        &::before {
+          content: attr(data-title);
+          font-weight: 700;
+          color: var(--color-black);
+          background-color: var(--light-yellow);
+          padding: 12px;
+          width: 100%;
+          display: none;
+        }
+
+        @include tablet {
+          padding-top: 52px;
+
+          &:not(:last-child) {
+            padding-bottom: 16px;
+          }
+
+          &::before {
+            display: block;
+            position: absolute;
+            height: 40px;
+            top: 0;
+            left: 0;
+            width: 100%;
+          }
+        }
+
+        span {
+          @include marginBottom(16px);
+
+          display: block;
+        }
+      }
+
+      @include tablet {
       }
     }
   }
