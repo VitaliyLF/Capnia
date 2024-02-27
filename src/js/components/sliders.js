@@ -23,10 +23,10 @@ new Swiper('.page-hero__swiper', {
   fadeEffect: {
     crossFade: true,
   },
-  // autoplay: {
-  //   delay: 2400,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 2400,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: '.page-hero__swiper-pagination',
     type: 'bullets',
@@ -76,17 +76,6 @@ new Swiper('.jaundice__swiper', {
     onlyInViewport: true,
     pageUpDown: true,
   },
-  // on: {
-  //   init: function () {
-  //     const slides = this.slides
-
-  //     console.log(slides)
-
-  //     slides.forEach((slide) => {
-  //       const pagination = slide.querySelector('.jaundice__swiper-pagination')
-  //     })
-  //   },
-  // },
 })
 
 new Swiper('.jaundice-treatment__swiper', {

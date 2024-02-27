@@ -197,7 +197,7 @@
 
     .swiper-slide-active & {
       transform: rotate(11deg);
-      transition: transform 0.3s linear;
+      transition: transform var(--timing) linear;
     }
 
     &--products {
