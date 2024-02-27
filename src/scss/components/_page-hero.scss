@@ -11,6 +11,17 @@
     }
   }
 
+  &--about {
+    background-color: var(--light-yellow);
+    padding-top: var(--offset-medium);
+    padding-bottom: var(--offset-small);
+
+    @include mobile {
+      padding-top: var(--offset-medium);
+      padding-bottom: var(--offset-medium-large);
+    }
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -18,6 +29,14 @@
 
     @include big-desktop {
       flex-direction: column;
+    }
+
+    &--about {
+      align-items: start;
+
+      @include big-desktop {
+        align-items: center;
+      }
     }
   }
 
@@ -30,6 +49,11 @@
       padding-left: 0;
       display: contents;
     }
+
+    &--about {
+      padding-top: 50px;
+      padding-left: 0;
+    }
   }
 
   &__title {
@@ -37,6 +61,12 @@
 
     @include mobile {
       @include marginBottom(0);
+    }
+
+    &--about {
+      @include big-desktop {
+        @include marginBottom(var(--offset-medium));
+      }
     }
   }
 
@@ -50,6 +80,10 @@
     }
 
     &--products {
+      margin-bottom: 0;
+    }
+
+    &--about {
       margin-bottom: 0;
     }
   }
@@ -67,11 +101,28 @@
       }
     }
 
+    &--about {
+      color: var(--color-black);
+    }
+
     p {
       @include marginBottom(var(--offset-medium));
 
       @include mobile {
         @include marginBottom(var(--offset-small));
+      }
+    }
+
+    blockquote {
+      @include marginBottom(var(--offset-medium));
+
+      @include mobile {
+        @include marginBottom(var(--offset-small));
+      }
+
+      footer {
+        margin-top: var(--offset-medium);
+        font-weight: 700;
       }
     }
 
@@ -121,6 +172,15 @@
       padding: var(--offset-medium-huge);
     }
 
+    &--about {
+      mix-blend-mode: multiply;
+      padding: var(--offset-medium-huge);
+
+      @include big-desktop {
+        margin-bottom: var(--offset-medium-large);
+      }
+    }
+
     @include mobile {
       padding: var(--offset-medium);
     }
@@ -143,10 +203,15 @@
       width: auto;
       height: 100%;
     }
+
+    &--about {
+      object-fit: fill;
+    }
   }
 
   &__image {
     border-radius: 50%;
+    aspect-ratio: 1;
 
     &--products {
       border-radius: 0;

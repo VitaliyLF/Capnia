@@ -73,14 +73,13 @@
   }
 }
 
-.text-stroke {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--color-dark);
-  text-stroke: 1px var(--color-dark);
-}
-
-.text-bg-gradient {
-  background: linear-gradient(90deg, rgb(158, 63, 58) 36%, rgb(52, 17, 142));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+@media (prefers-reduced-motion) {
+  * {
+    &,
+    &::after,
+    &::before {
+      animation: none !important;
+      transition: 0.01s !important;
+    }
+  }
 }

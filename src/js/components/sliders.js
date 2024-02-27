@@ -19,7 +19,6 @@ new Swiper('.page-hero__swiper', {
   slidesPerView: 'auto',
   simulateTouch: false,
   speed: 500,
-  // autoHeight: true,
   effect: 'fade',
   fadeEffect: {
     crossFade: true,
@@ -92,6 +91,17 @@ new Swiper('.jaundice__swiper', {
     enabled: true,
     onlyInViewport: true,
     pageUpDown: true,
+  },
+  on: {
+    init: function () {
+      const slides = this.slides
+
+      console.log(slides)
+
+      slides.forEach((slide) => {
+        const pagination = slide.querySelector('.jaundice__swiper-pagination')
+      })
+    },
   },
 })
 

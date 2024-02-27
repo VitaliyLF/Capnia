@@ -63,6 +63,15 @@ small {
   font-size: 100%;
 }
 
+blockquote {
+  margin: 0;
+}
+
+cite {
+  display: inline-block;
+  font-style: normal;
+}
+
 input {
   -webkit-appearance: none;
   appearance: none;

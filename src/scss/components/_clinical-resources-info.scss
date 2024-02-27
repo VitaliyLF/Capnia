@@ -1,5 +1,6 @@
 .clinical-resources-info {
   --clinical-resources-info-container: 945px;
+  --clinical-resources-info-container-cosense-studies: 1150px;
   --to-top-width: 40px;
   --to-top-offset: 32px;
 
@@ -26,6 +27,18 @@
 
   &__container {
     max-width: var(--clinical-resources-info-container);
+
+    &--cosense-studies {
+      max-width: var(--clinical-resources-info-container-cosense-studies);
+      display: flex;
+      align-items: start;
+      gap: 0 120px;
+
+      @include tablet {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
   }
 
   &__title {
@@ -34,15 +47,42 @@
     @include title-fz24;
 
     font-weight: 700;
+
+    &--cosense-studies {
+      @include tablet {
+        order: -1;
+        text-align: center;
+      }
+    }
   }
 
   &__wrapper {
     position: relative;
+
+    &--cosense-studies {
+      @include tablet {
+        display: contents;
+      }
+    }
+  }
+
+  &__content {
+    @include marginBottom(var(--offset-medium-large));
+
+    @include tablet {
+      display: contents;
+    }
+  }
+
+  &__search {
+    @include tablet {
+      margin-bottom: var(--offset-medium);
+    }
   }
 
   &__to-top {
     position: fixed;
-    top: 40%;
+    top: 20%;
     left: calc(
       (
           100% - var(--clinical-resources-info-container) -
@@ -83,6 +123,15 @@
 
     @include big-desktop {
       display: none;
+    }
+
+    &--cosense-studies {
+      left: calc(
+        (
+            100% - var(--clinical-resources-info-container-cosense-studies) +
+              320px + 80px
+          ) / 2
+      );
     }
   }
 
@@ -161,13 +210,13 @@
     }
   }
 
-  &__search {
-    @include marginBottom(var(--offset-medium-large));
-  }
-
   &__form {
     position: relative;
     max-width: 654px;
+
+    @include tablet {
+      max-width: 100%;
+    }
   }
 
   &__input {
@@ -282,6 +331,31 @@
 
       @include tablet {
       }
+    }
+  }
+
+  &__download {
+    position: sticky;
+    top: var(--offset-large);
+    display: inline-block;
+    margin-top: 155px;
+    flex: 0 0 auto;
+    text-align: center;
+    color: var(--color-black);
+
+    @include tablet {
+      position: static;
+      margin-top: 0;
+      margin-bottom: var(--offset-medium);
+    }
+  }
+
+  &__download-img {
+    margin-bottom: var(--offset-medium);
+
+    @include tablet {
+      margin-inline: auto;
+      margin-bottom: var(--offset-small);
     }
   }
 }
