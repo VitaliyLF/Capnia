@@ -23,10 +23,10 @@ new Swiper('.page-hero__swiper', {
   fadeEffect: {
     crossFade: true,
   },
-  autoplay: {
-    delay: 2400,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2400,
+  //   disableOnInteraction: false,
+  // },
   pagination: {
     el: '.page-hero__swiper-pagination',
     type: 'bullets',
@@ -44,22 +44,6 @@ new Swiper('.page-hero__swiper', {
     enabled: true,
     onlyInViewport: true,
     pageUpDown: true,
-  },
-  on: {
-    slideChange: function () {
-      const activeSlideIndexHeroSlider = this.activeIndex
-      const heroSlides = this.slides
-
-      heroSlides.forEach((slide, index) => {
-        const decorImage = slide.querySelector('.page-hero__decor')
-
-        if (index === activeSlideIndexHeroSlider) {
-          decorImage.style.transform = 'rotate(15deg)'
-        } else {
-          decorImage.style.transform = ''
-        }
-      })
-    },
   },
 })
 
@@ -92,17 +76,17 @@ new Swiper('.jaundice__swiper', {
     onlyInViewport: true,
     pageUpDown: true,
   },
-  on: {
-    init: function () {
-      const slides = this.slides
+  // on: {
+  //   init: function () {
+  //     const slides = this.slides
 
-      console.log(slides)
+  //     console.log(slides)
 
-      slides.forEach((slide) => {
-        const pagination = slide.querySelector('.jaundice__swiper-pagination')
-      })
-    },
-  },
+  //     slides.forEach((slide) => {
+  //       const pagination = slide.querySelector('.jaundice__swiper-pagination')
+  //     })
+  //   },
+  // },
 })
 
 new Swiper('.jaundice-treatment__swiper', {
