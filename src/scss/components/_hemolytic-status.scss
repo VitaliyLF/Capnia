@@ -24,11 +24,6 @@
     margin-inline: auto;
     text-align: center;
 
-    span {
-      display: inline-block;
-      font-style: italic;
-    }
-
     @include mobile {
       @include marginBottom(var(--offset-medium));
     }
@@ -105,10 +100,6 @@
     max-width: 500px;
     margin-inline: auto;
 
-    span {
-      font-style: italic;
-    }
-
     & .hemolytic-status__step {
       display: block;
       margin-bottom: var(--offset-small);
@@ -130,11 +121,6 @@
 
     margin-bottom: var(--offset-medium);
     text-align: center;
-
-    span {
-      display: inline-block;
-      font-style: italic;
-    }
   }
 
   &__link {
@@ -150,10 +136,6 @@
   &__text {
     margin-inline: auto;
     max-width: 695px;
-
-    span {
-      font-style: italic;
-    }
 
     @include mobile {
       max-width: 100%;

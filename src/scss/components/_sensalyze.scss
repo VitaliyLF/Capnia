@@ -38,11 +38,6 @@
       @include mobile {
         @include marginBottom(var(--offset-small));
       }
-
-      span {
-        display: inline-block;
-        font-style: italic;
-      }
     }
   }
 }

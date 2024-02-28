@@ -143,12 +143,6 @@
     padding: 6px 22px;
     text-transform: capitalize;
 
-    p {
-      span {
-        font-style: italic;
-      }
-    }
-
     @include mobile {
       padding: var(--offset-small) var(--offset-medium);
     }
@@ -193,10 +187,6 @@
         @include mobile {
           @include marginBottom(var(--offset-small));
         }
-      }
-
-      span {
-        font-style: italic;
       }
     }
   }
