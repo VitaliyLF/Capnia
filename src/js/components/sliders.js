@@ -111,44 +111,117 @@ new Swiper('.jaundice-treatment__swiper', {
   },
 })
 
-new Swiper('.consultants__swiper', {
-  speed: 500,
-  simulateTouch: false,
-  a11y: {
-    enabled: true,
-    prevSlideMessage: 'Previous slide',
-    nextSlideMessage: 'Next slide',
-    firstSlideMessage: 'This is the first slide',
-    lastSlideMessage: 'This is the last slide',
-    paginationBulletMessage: 'Go to slide {{index}}',
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1.2,
-      spaceBetween: gapMedium,
-      simulateTouch: true,
+// new Swiper('.consultants__swiper', {
+//   speed: 500,
+//   simulateTouch: false,
+//   a11y: {
+//     enabled: true,
+//     prevSlideMessage: 'Previous slide',
+//     nextSlideMessage: 'Next slide',
+//     firstSlideMessage: 'This is the first slide',
+//     lastSlideMessage: 'This is the last slide',
+//     paginationBulletMessage: 'Go to slide {{index}}',
+//   },
+//   breakpoints: {
+//     320: {
+//       slidesPerView: 1.2,
+//       spaceBetween: gapMedium,
+//       simulateTouch: true,
+//     },
+//     576: {
+//       slidesPerView: 1.2,
+//       spaceBetween: gapMedium,
+//       simulateTouch: true,
+//     },
+//     768: {
+//       slidesPerView: 2.2,
+//       spaceBetween: gapMedium,
+//       simulateTouch: true,
+//     },
+//     1024: {
+//       slidesPerView: 2.5,
+//       spaceBetween: gapLarge,
+//       simulateTouch: true,
+//       allowTouchMove: true,
+//     },
+//     1370: {
+//       simulateTouch: false,
+//       allowTouchMove: false,
+//     },
+//   },
+// })
+
+window.addEventListener('DOMContentLoaded', () => {
+  const resizableSwiper = (
+    breakpoint,
+    swiperClass,
+    swiperSettings,
+    callback
+  ) => {
+    let swiper
+
+    breakpoint = window.matchMedia(breakpoint)
+
+    const enableSwiper = function (className, settings) {
+      swiper = new Swiper(className, settings)
+
+      if (callback) {
+        callback(swiper)
+      }
+    }
+
+    const checker = function () {
+      if (breakpoint.matches) {
+        return enableSwiper(swiperClass, swiperSettings)
+      } else {
+        if (swiper !== undefined) swiper.destroy(true, true)
+        return
+      }
+    }
+
+    breakpoint.addEventListener('change', checker)
+    checker()
+  }
+
+  const someFunc = (instance) => {
+    if (instance) {
+      instance.on('slideChange', function (e) {
+        console.log('*** mySwiper.activeIndex', instance.activeIndex)
+      })
+    }
+  }
+
+  resizableSwiper('(max-width: 1370px)', '.consultants__swiper', {
+    speed: 500,
+    simulateTouch: false,
+    a11y: {
+      enabled: true,
+      prevSlideMessage: 'Previous slide',
+      nextSlideMessage: 'Next slide',
+      firstSlideMessage: 'This is the first slide',
+      lastSlideMessage: 'This is the last slide',
+      paginationBulletMessage: 'Go to slide {{index}}',
     },
-    576: {
-      slidesPerView: 1.2,
-      spaceBetween: gapMedium,
-      simulateTouch: true,
+    breakpoints: {
+      320: {
+        slidesPerView: 1.2,
+        spaceBetween: gapMedium,
+      },
+      576: {
+        slidesPerView: 1.2,
+        spaceBetween: gapMedium,
+      },
+      768: {
+        slidesPerView: 2.2,
+        spaceBetween: gapMedium,
+      },
+      1024: {
+        slidesPerView: 2.5,
+        spaceBetween: gapLarge,
+        simulateTouch: true,
+      },
     },
-    768: {
-      slidesPerView: 2.2,
-      spaceBetween: gapMedium,
-      simulateTouch: true,
-    },
-    1024: {
-      slidesPerView: 2.5,
-      spaceBetween: gapLarge,
-      simulateTouch: true,
-      allowTouchMove: true,
-    },
-    1370: {
-      simulateTouch: false,
-      allowTouchMove: false,
-    },
-  },
+  })
 })
 
 new Swiper('.hemolytic-status__swiper', {

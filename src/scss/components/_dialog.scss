@@ -9,7 +9,7 @@
   display: block;
   opacity: 0;
   visibility: hidden;
-  transform: scale(0.5);
+  transform: scale(0.6);
   transition: opacity var(--timing) ease, visibility var(--timing) ease,
     background-color var(--timing) ease, transform var(--timing) ease;
 
@@ -24,17 +24,6 @@
     visibility: visible;
   }
 
-  &__container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--offset-large) 0;
-
-    @include tablet {
-      flex-direction: row;
-      gap: 0;
-    }
-  }
-
   &__inner {
     background-color: transparent;
 
@@ -47,17 +36,41 @@
   }
 
   &__modal-content {
+    padding: var(--offset-huge) var(--offset-large);
     border-radius: var(--offset-medium);
     background-color: var(--lighter-blue);
+    display: flex;
+    gap: 0 var(--offset-large);
+    justify-content: space-between;
+
+    &--kernicterus {
+      max-width: 600px;
+    }
+
+    &--blood-tests {
+      max-width: 600px;
+    }
 
     @include tablet {
       border-radius: 0;
+      flex-direction: column;
+      gap: var(--offset-medium) 0;
+      padding: 108px var(--offset-medium) 192px var(--offset-medium);
     }
   }
 
   &__modal-close {
-    display: block;
-    margin-left: auto;
+    text-align: right;
+    padding-bottom: var(--offset-medium-large);
+    cursor: pointer;
+
+    @include tablet {
+      position: absolute;
+      top: var(--offset-medium);
+      right: var(--offset-medium);
+      padding-bottom: 0;
+      z-index: var(--dialog-btn-close-z-index);
+    }
   }
 
   &__modal-icon {
@@ -71,32 +84,9 @@
     }
   }
 
-  &__modal-inner {
-    position: relative;
-    max-width: 600px;
-    padding: var(--offset-huge) var(--offset-large);
-    display: flex;
-    gap: 0 var(--offset-large);
-    justify-content: space-between;
-
-    &--consultants {
-      max-width: 100%;
-      padding: var(--offset-large);
-
-      @include tablet {
-        flex-direction: column;
-        gap: var(--offset-medium) 0;
-      }
-    }
-
-    @include tablet {
-      padding: 108px var(--offset-medium) 192px var(--offset-medium);
-      max-width: 100%;
-    }
-  }
-
   &__modal-info {
     max-width: 300px;
+    flex: 0 0 auto;
 
     &--consultants {
       @include tablet {
