@@ -58,6 +58,9 @@
 
   &__wrapper {
     position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0 var(--offset-medium);
 
     &--cosense-studies {
       @include tablet {
@@ -81,18 +84,14 @@
   }
 
   &__to-top {
-    position: fixed;
-    top: 20%;
-    left: calc(
-      (
-          100% - var(--clinical-resources-info-container) -
-            (var(--to-top-width) * 2) - (var(--to-top-offset) * 2)
-        ) / 2
-    );
+    position: sticky;
+    top: var(--offset-huge);
+    left: 0;
     display: inline-flex;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+    flex: 0 0 auto;
     border: 1px solid var(--light-blue);
     border-radius: var(--border-radius-medium-small);
     width: var(--to-top-width);
@@ -101,6 +100,7 @@
     line-height: 133%;
     letter-spacing: -0.01em;
     text-transform: uppercase;
+    margin-top: 155px;
     text-align: center;
     color: var(--color-black);
     z-index: var(--to-top-z-index);
@@ -121,17 +121,8 @@
       visibility: visible;
     }
 
-    @include big-desktop {
+    @include tablet {
       display: none;
-    }
-
-    &--cosense-studies {
-      left: calc(
-        (
-            100% - var(--clinical-resources-info-container-cosense-studies) +
-              320px + 80px
-          ) / 2
-      );
     }
   }
 
