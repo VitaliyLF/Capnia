@@ -31,6 +31,10 @@
       flex-direction: column;
     }
 
+    @include mobile {
+      gap: var(--offset-medium) 0;
+    }
+
     &--about {
       align-items: start;
 
@@ -76,7 +80,6 @@
       display: inline-flex;
       align-items: center;
       flex-direction: column;
-      // margin-bottom: var(--offset-medium);
     }
 
     &--products {
@@ -183,6 +186,7 @@
 
     @include mobile {
       padding: var(--offset-medium);
+      margin-bottom: var(--offset-medium);
     }
   }
 
@@ -230,11 +234,9 @@
       bottom: var(--offset-medium);
 
       @include big-desktop {
-        height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        bottom: var(--page-hero-inner-height);
+        top: var(--page-hero-inner-height) !important;
+        height: var(--offset-medium);
+        margin-top: var(--offset-medium-large);
       }
     }
   }
