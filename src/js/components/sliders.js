@@ -24,11 +24,11 @@ const pageHeroSlider = new Swiper('.page-hero__swiper', {
   fadeEffect: {
     crossFade: true,
   },
-  // autoplay: {
-  //   delay: 2400,
-  //   disableOnInteraction: false,
-  //   pauseOnMouseEnter: true,
-  // },
+  autoplay: {
+    delay: 2400,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
   pagination: {
     el: '.page-hero__swiper-pagination',
     type: 'bullets',
@@ -57,6 +57,19 @@ const pageHeroSlider = new Swiper('.page-hero__swiper', {
   },
 })
 
+let resizeInterval
+
+function startResizeListener() {
+  if (!resizeInterval) {
+    resizeInterval = setInterval(function () {
+      updatePaginationHeight.call(pageHeroSlider)
+    }, 10)
+  }
+}
+
+window.addEventListener('resize', startResizeListener)
+window.addEventListener('orientationchange', startResizeListener)
+
 function updatePaginationHeight() {
   if (isMobileViewPort()) {
     const activeSlide = this.slides[this.activeIndex]
@@ -77,6 +90,10 @@ function updatePaginationHeight() {
 }
 
 window.addEventListener('resize', function () {
+  updatePaginationHeight.call(pageHeroSlider)
+})
+
+window.addEventListener('orientationchange', function () {
   updatePaginationHeight.call(pageHeroSlider)
 })
 
