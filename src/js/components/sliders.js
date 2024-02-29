@@ -12,12 +12,14 @@ const bodyStyle = window.getComputedStyle(document.body)
 const gapHuge = parseInt(bodyStyle.getPropertyValue('--offset-huge'))
 const gapLarge = parseInt(bodyStyle.getPropertyValue('--offset-large'))
 const gapMedium = parseInt(bodyStyle.getPropertyValue('--offset-medium'))
+const isMobileViewPort = () => window.innerWidth < 1370
 
 Swiper.use([Pagination, Navigation, A11y, Keyboard, Autoplay, EffectFade])
 
 new Swiper('.page-hero__swiper', {
   slidesPerView: 'auto',
   simulateTouch: false,
+  autoHeight: true,
   speed: 500,
   effect: 'fade',
   fadeEffect: {
@@ -26,6 +28,7 @@ new Swiper('.page-hero__swiper', {
   // autoplay: {
   //   delay: 2400,
   //   disableOnInteraction: false,
+  //   pauseOnMouseEnter: true,
   // },
   pagination: {
     el: '.page-hero__swiper-pagination',
@@ -45,6 +48,66 @@ new Swiper('.page-hero__swiper', {
     onlyInViewport: true,
     pageUpDown: true,
   },
+  on: {
+    init: function () {
+      if (isMobileViewPort()) {
+        const allSlides = this.slides
+
+        allSlides.forEach((slide) => {
+          const pageHeroInner = slide.querySelector('.page-hero__inner')
+
+          if (pageHeroInner) {
+            const pageHeroInnerHeight = pageHeroInner.clientHeight
+
+            console.log(pageHeroInnerHeight)
+
+            const isActiveSlide = slide.classList.contains(
+              'swiper-slide-active'
+            )
+
+            if (isActiveSlide) {
+              const pageHeroPagination = document.querySelector(
+                '.page-hero__swiper-pagination'
+              )
+              pageHeroPagination.style.setProperty(
+                '--page-hero-inner-height',
+                pageHeroInnerHeight + 'px'
+              )
+            }
+          }
+        })
+      }
+    },
+  },
+  // on: {
+  //   slideChange: function () {
+  //     if (isMobileViewPort()) {
+  //       const allSlides = this.slides
+
+  //       allSlides.forEach((slide) => {
+  //         const pageHeroInner = slide.querySelector('.page-hero__inner')
+
+  //         if (pageHeroInner) {
+  //           const pageHeroInnerHeight = pageHeroInner.clientHeight
+
+  //           const isActiveSlide = slide.classList.contains(
+  //             'swiper-slide-active'
+  //           )
+
+  //           if (isActiveSlide) {
+  //             const pageHeroPagination = document.querySelector(
+  //               '.page-hero__swiper-pagination'
+  //             )
+  //             pageHeroPagination.style.setProperty(
+  //               '--page-hero-inner-height',
+  //               pageHeroInnerHeight + 'px'
+  //             )
+  //           }
+  //         }
+  //       })
+  //     }
+  //   },
+  // },
 })
 
 new Swiper('.jaundice__swiper', {
@@ -57,6 +120,7 @@ new Swiper('.jaundice__swiper', {
   // autoplay: {
   //   delay: 2400,
   //   disableOnInteraction: false,
+  //   pauseOnMouseEnter: true,
   // },
   pagination: {
     el: '.jaundice__swiper-pagination',

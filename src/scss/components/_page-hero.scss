@@ -76,7 +76,7 @@
       display: inline-flex;
       align-items: center;
       flex-direction: column;
-      margin-bottom: var(--offset-medium);
+      // margin-bottom: var(--offset-medium);
     }
 
     &--products {
@@ -177,6 +177,10 @@
       }
     }
 
+    @include big-desktop {
+      margin-bottom: var(--offset-large);
+    }
+
     @include mobile {
       padding: var(--offset-medium);
     }
@@ -226,7 +230,11 @@
       bottom: var(--offset-medium);
 
       @include big-desktop {
-        position: static;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: var(--page-hero-inner-height);
       }
     }
   }
