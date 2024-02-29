@@ -23,10 +23,10 @@ new Swiper('.page-hero__swiper', {
   fadeEffect: {
     crossFade: true,
   },
-  autoplay: {
-    delay: 2400,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2400,
+  //   disableOnInteraction: false,
+  // },
   pagination: {
     el: '.page-hero__swiper-pagination',
     type: 'bullets',
@@ -54,12 +54,12 @@ new Swiper('.jaundice__swiper', {
   fadeEffect: {
     crossFade: true,
   },
-  autoplay: {
-    delay: 2400,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2400,
+  //   disableOnInteraction: false,
+  // },
   pagination: {
-    el: '.jaundice__swiper-pagination',
+    el: '.swiper-pagination',
     type: 'bullets',
     clickable: true,
   },
@@ -110,46 +110,6 @@ new Swiper('.jaundice-treatment__swiper', {
     },
   },
 })
-
-// new Swiper('.consultants__swiper', {
-//   speed: 500,
-//   simulateTouch: false,
-//   a11y: {
-//     enabled: true,
-//     prevSlideMessage: 'Previous slide',
-//     nextSlideMessage: 'Next slide',
-//     firstSlideMessage: 'This is the first slide',
-//     lastSlideMessage: 'This is the last slide',
-//     paginationBulletMessage: 'Go to slide {{index}}',
-//   },
-//   breakpoints: {
-//     320: {
-//       slidesPerView: 1.2,
-//       spaceBetween: gapMedium,
-//       simulateTouch: true,
-//     },
-//     576: {
-//       slidesPerView: 1.2,
-//       spaceBetween: gapMedium,
-//       simulateTouch: true,
-//     },
-//     768: {
-//       slidesPerView: 2.2,
-//       spaceBetween: gapMedium,
-//       simulateTouch: true,
-//     },
-//     1024: {
-//       slidesPerView: 2.5,
-//       spaceBetween: gapLarge,
-//       simulateTouch: true,
-//       allowTouchMove: true,
-//     },
-//     1370: {
-//       simulateTouch: false,
-//       allowTouchMove: false,
-//     },
-//   },
-// })
 
 window.addEventListener('DOMContentLoaded', () => {
   const resizableSwiper = (
@@ -246,9 +206,11 @@ new Swiper('.hemolytic-status__swiper', {
   breakpoints: {
     320: {
       slidesPerView: 1.3,
+      spaceBetween: gapMedium,
     },
     576: {
       slidesPerView: 1.4,
+      spaceBetween: gapMedium,
     },
     1024: {
       slidesPerView: 1.5,

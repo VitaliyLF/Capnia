@@ -1,0 +1,51 @@
+.privacy {
+  padding-block: var(--offset-medium-huge);
+  background-color: var(--lighter-blue);
+
+  @include mobile {
+    padding-block: var(--offset-medium);
+  }
+
+  &__container {
+    max-width: 945px;
+  }
+
+  &__title {
+    @include marginBottom(var(--offset-medium-large));
+
+    text-align: center;
+
+    @include mobile {
+      @include marginBottom(var(--offset-medium));
+    }
+  }
+
+  &__info {
+    p {
+      @include marginBottom(var(--offset-small));
+    }
+
+    h2 {
+      @include marginBottom(var(--offset-small));
+
+      @include big-desktop {
+        font-size: 20px;
+      }
+    }
+
+    ul {
+      @include marginBottom(var(--offset-small));
+
+      list-style: disc;
+      padding-left: var(--offset-medium);
+    }
+  }
+
+  &__info-uppercase {
+    @include marginBottom(var(--offset-small));
+
+    p {
+      text-transform: uppercase;
+    }
+  }
+}
