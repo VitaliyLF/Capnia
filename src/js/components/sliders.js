@@ -16,7 +16,7 @@ const isMobileViewPort = () => window.innerWidth < 1370
 
 Swiper.use([Pagination, Navigation, A11y, Keyboard, Autoplay, EffectFade])
 
-new Swiper('.page-hero__swiper', {
+const pageHeroSlider = new Swiper('.page-hero__swiper', {
   slidesPerView: 'auto',
   simulateTouch: false,
   speed: 500,
@@ -24,11 +24,11 @@ new Swiper('.page-hero__swiper', {
   fadeEffect: {
     crossFade: true,
   },
-  autoplay: {
-    delay: 2400,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  },
+  // autoplay: {
+  //   delay: 2400,
+  //   disableOnInteraction: false,
+  //   pauseOnMouseEnter: true,
+  // },
   pagination: {
     el: '.page-hero__swiper-pagination',
     type: 'bullets',
@@ -75,6 +75,10 @@ function updatePaginationHeight() {
     )
   }
 }
+
+window.addEventListener('resize', function () {
+  updatePaginationHeight.call(pageHeroSlider)
+})
 
 new Swiper('.jaundice__swiper', {
   slidesPerView: 1,
