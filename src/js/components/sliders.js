@@ -59,7 +59,7 @@ new Swiper('.jaundice__swiper', {
   //   disableOnInteraction: false,
   // },
   pagination: {
-    el: '.swiper-pagination',
+    el: '.jaundice__swiper-pagination',
     type: 'bullets',
     clickable: true,
   },

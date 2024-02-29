@@ -112,28 +112,6 @@
     }
   }
 
-  &__nav-link-text {
-    position: relative;
-    font-style: italic;
-    font-size: 14px;
-
-    &::after {
-      content: '®';
-      padding-left: 2px;
-      font-style: normal;
-    }
-
-    @include big-desktop {
-      @include title-fz32;
-    }
-
-    @include mobile {
-      @include title-fz24;
-
-      font-weight: 700;
-    }
-  }
-
   &__burger {
     --burger-width: 37px;
     --burger-height: 28px;

@@ -65,14 +65,14 @@
   }
 
   &__swiper-pagination {
-    position: static;
+    // position: static;
   }
 
   &__figure {
     display: flex;
     flex-direction: column;
     max-width: 765px;
-    margin-bottom: var(--offset-small);
+    // margin-bottom: var(--offset-small);
 
     figcaption {
       font-family: var(--font-family-accent);
