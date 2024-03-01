@@ -27,6 +27,10 @@
     @include mobile {
       @include marginBottom(var(--offset-medium));
     }
+
+    @include small-mobile {
+      max-width: 311px;
+    }
   }
 
   &__swiper {

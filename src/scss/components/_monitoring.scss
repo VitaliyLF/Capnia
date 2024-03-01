@@ -92,6 +92,10 @@
 
   &__image {
     border-radius: var(--border-radius-medium);
+
+    @include small-mobile {
+      max-width: 311px;
+    }
   }
 
   &__info {

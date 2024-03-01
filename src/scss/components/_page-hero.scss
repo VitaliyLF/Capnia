@@ -71,6 +71,10 @@
       @include marginBottom(0);
     }
 
+    @include small-mobile {
+      max-width: 311px;
+    }
+
     &--about {
       @include big-desktop {
         @include marginBottom(var(--offset-medium));

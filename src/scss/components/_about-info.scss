@@ -1,6 +1,6 @@
 .about-info {
   background-color: var(--color-light);
-  padding-top: var(--offset-huge);
+  padding-top: 105px;
   padding-bottom: var(--offset-medium-huge);
 
   @include mobile {
@@ -11,8 +11,10 @@
   &__container {
     display: flex;
     gap: 0 var(--offset-huge);
+    max-width: 1350px;
 
     @include big-desktop {
+      max-width: 100%;
       flex-direction: column;
       align-items: center;
     }
@@ -25,7 +27,7 @@
   }
 
   &__info {
-    @include marginBottom(var(--offset-large));
+    @include marginBottom(var(--offset-medium));
 
     max-width: 663px;
 

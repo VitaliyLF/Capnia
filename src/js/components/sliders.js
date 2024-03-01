@@ -261,7 +261,7 @@ new Swiper('.hemolytic-status__swiper', {
   },
   breakpoints: {
     320: {
-      slidesPerView: 1.3,
+      slidesPerView: 1.2,
       spaceBetween: gapMedium,
     },
     576: {
