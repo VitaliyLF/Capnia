@@ -16,10 +16,6 @@
   .swiper-pagination-horizontal.swiper-pagination-bullets
     .swiper-pagination-bullet {
     @include marginRight(var(--offset-medium));
-
-    @include mobile {
-      @include marginRight(var(--offset-small));
-    }
   }
 
   .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,

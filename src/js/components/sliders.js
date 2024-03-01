@@ -73,19 +73,24 @@ window.addEventListener('orientationchange', startResizeListener)
 function updatePaginationHeight() {
   if (isMobileViewPort()) {
     const activeSlide = this.slides[this.activeIndex]
-    const pageHeroTitleHeight = activeSlide.querySelector('.page-hero__title')
-    const pageHeroImage = activeSlide.querySelector('.page-hero__images')
-    const pageHeroPagination = document.querySelector(
-      '.page-hero__swiper-pagination'
-    )
 
-    const pageHeroHeightTop =
-      pageHeroTitleHeight.clientHeight + pageHeroImage.clientHeight
+    if (activeSlide) {
+      const pageHeroTitleHeight = activeSlide.querySelector('.page-hero__title')
+      const pageHeroImage = activeSlide.querySelector('.page-hero__images')
+      const pageHeroPagination = document.querySelector(
+        '.page-hero__swiper-pagination'
+      )
 
-    pageHeroPagination.style.setProperty(
-      '--page-hero-inner-height',
-      pageHeroHeightTop + 'px'
-    )
+      if (pageHeroTitleHeight && pageHeroImage) {
+        const pageHeroHeightTop =
+          pageHeroTitleHeight.clientHeight + pageHeroImage.clientHeight
+
+        pageHeroPagination.style.setProperty(
+          '--page-hero-inner-height',
+          pageHeroHeightTop + 'px'
+        )
+      }
+    }
   }
 }
 

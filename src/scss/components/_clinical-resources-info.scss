@@ -1,6 +1,5 @@
 .clinical-resources-info {
   --clinical-resources-info-container: 945px;
-  --clinical-resources-info-container-cosense-studies: 1150px;
   --to-top-width: 40px;
   --to-top-offset: 32px;
 
@@ -29,12 +28,12 @@
     max-width: var(--clinical-resources-info-container);
 
     &--cosense-studies {
-      max-width: var(--clinical-resources-info-container-cosense-studies);
+      max-width: 1410px;
       display: flex;
       align-items: start;
       gap: 0 120px;
 
-      @include tablet {
+      @include big-desktop {
         flex-direction: column;
         align-items: stretch;
       }
@@ -49,7 +48,7 @@
     font-weight: 700;
 
     &--cosense-studies {
-      @include tablet {
+      @include big-desktop {
         order: -1;
         text-align: center;
       }
@@ -63,23 +62,15 @@
     gap: 0 var(--offset-medium);
 
     &--cosense-studies {
-      @include tablet {
+      @include big-desktop {
         display: contents;
       }
     }
   }
 
   &__content {
-    @include marginBottom(var(--offset-medium-large));
-
-    @include tablet {
+    @include big-desktop {
       display: contents;
-    }
-  }
-
-  &__search {
-    @include tablet {
-      margin-bottom: var(--offset-medium);
     }
   }
 
@@ -121,8 +112,17 @@
       visibility: visible;
     }
 
-    @include tablet {
+    @include big-desktop {
       display: none;
+    }
+  }
+
+  &__inner {
+    max-width: 995px;
+
+    @include big-desktop {
+      display: contents;
+      max-width: 100%;
     }
   }
 
@@ -195,7 +195,7 @@
     position: relative;
     max-width: 654px;
 
-    @include tablet {
+    @include big-desktop {
       max-width: 100%;
     }
   }
@@ -233,10 +233,15 @@
   }
 
   &__table {
+    margin-top: 40px;
     border-collapse: collapse;
     font-size: 14px;
     text-align: left;
     width: 100%;
+
+    @include big-desktop {
+      margin-top: var(--offset-medium);
+    }
   }
 
   &__table-thead {
@@ -250,7 +255,7 @@
       background-color: var(--light-yellow);
     }
 
-    @include tablet {
+    @include big-desktop {
       display: none;
     }
   }
@@ -259,7 +264,7 @@
     tr {
       border-bottom: 1px solid var(--light-grey);
 
-      @include tablet {
+      @include big-desktop {
         @include marginBottom(48px);
 
         display: flex;
@@ -286,7 +291,7 @@
           display: none;
         }
 
-        @include tablet {
+        @include big-desktop {
           padding-top: 52px;
 
           &:not(:last-child) {
@@ -309,9 +314,6 @@
           display: block;
         }
       }
-
-      @include tablet {
-      }
     }
   }
 
@@ -324,7 +326,7 @@
     text-align: center;
     color: var(--color-black);
 
-    @include tablet {
+    @include big-desktop {
       position: static;
       margin-top: 0;
       margin-bottom: var(--offset-medium);
@@ -334,7 +336,7 @@
   &__download-img {
     margin-bottom: var(--offset-medium);
 
-    @include tablet {
+    @include big-desktop {
       margin-inline: auto;
       margin-bottom: var(--offset-small);
     }

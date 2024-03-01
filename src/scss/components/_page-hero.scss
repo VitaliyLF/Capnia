@@ -1,6 +1,10 @@
 .page-hero {
   padding-bottom: var(--offset-small);
 
+  @include mobile {
+    padding-bottom: var(--offset-medium);
+  }
+
   &--products {
     background-color: var(--light-yellow);
     padding-block: var(--offset-small);

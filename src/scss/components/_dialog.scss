@@ -99,6 +99,10 @@
     }
   }
 
+  &__modal-name {
+    line-height: 133%;
+  }
+
   &__modal-text {
     @include marginBottom(var(--offset-medium));
 
