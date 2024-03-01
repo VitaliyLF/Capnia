@@ -79,6 +79,22 @@
     }
   }
 
+  .swiper
+    .swiper-horizontal
+    > .swiper-pagination-bullets
+    .swiper-pagination-bullet:not(:last-child),
+  .swiper
+    .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet:not(:last-child) {
+    @include mobile {
+      margin-right: 28px;
+    }
+
+    @include small-mobile {
+      margin-right: 24px;
+    }
+  }
+
   &__figure {
     display: flex;
     flex-direction: column;
