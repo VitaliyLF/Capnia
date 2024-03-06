@@ -149,6 +149,7 @@
 
     li {
       a {
+        display: inline-block;
         font-style: normal;
         color: var(--actionable-item);
         border-bottom: 1px solid currentColor;
@@ -239,7 +240,7 @@
     .swiper-pagination-bullets.swiper-pagination-horizontal,
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
-      bottom: var(--offset-medium);
+      bottom: var(--offset-small);
 
       @include big-desktop {
         top: var(--page-hero-inner-height) !important;
