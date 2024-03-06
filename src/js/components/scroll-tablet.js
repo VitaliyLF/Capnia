@@ -1,10 +1,13 @@
+const bodyStyle = window.getComputedStyle(document.body)
+const trTabletAnchorColor = bodyStyle.getPropertyValue('--light-yellow-hover')
+
 const hashUrl = window.location.hash
 
 if (hashUrl.length) {
-  const elementId = hashUrl.slice(1)
-  const targetElement = document.getElementById(elementId)
+  const trTableId = hashUrl.slice(1)
+  const trTableTarget = document.getElementById(trTableId)
 
-  if (targetElement) {
-    targetElement.style.background = '#fff0c2'
+  if (trTableTarget) {
+    trTableTarget.style.backgroundColor = trTabletAnchorColor
   }
 }

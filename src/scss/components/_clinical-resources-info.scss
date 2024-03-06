@@ -268,6 +268,7 @@
     tr {
       border-bottom: 1px solid var(--light-grey);
       transition: background-color 1s ease;
+      scroll-margin-top: var(--offset-large);
 
       @include big-desktop {
         @include marginBottom(48px);
