@@ -1,5 +1,5 @@
 class Accordion {
-  constructor(selector, options) {
+  constructor(accordion, options) {
     let defaultOptions = {
       isOpen: () => {},
       isClose: () => {},
@@ -7,7 +7,7 @@ class Accordion {
     }
 
     this.options = Object.assign(defaultOptions, options)
-    this.accordion = document.querySelector(selector)
+    this.accordion = accordion
     if (!this.accordion) return
     this.control = this.accordion.querySelector('.accordion__control')
     this.content = this.accordion.querySelector('.accordion__content')
@@ -57,19 +57,9 @@ class Accordion {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  const accordionsItems = [
-    '.js-accordion-1',
-    '.js-accordion-2',
-    '.js-accordion-3',
-    '.js-accordion-4',
-    '.js-accordion-5',
-    '.js-accordion-6',
-    '.js-accordion-7',
-    '.js-accordion-8',
-    '.js-accordion-9',
-  ]
+  const accordions = document.querySelectorAll('.js-accordion')
 
-  accordionsItems.forEach((accordion) => {
+  accordions.forEach((accordion) => {
     new Accordion(accordion, {
       speed: 400,
     })
