@@ -56,6 +56,15 @@
 
     position: relative;
 
+    &--dropdown {
+      @include hover {
+        & .dropdown {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
     @include big-desktop {
       @include marginRight(0);
     }
