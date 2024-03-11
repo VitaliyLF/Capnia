@@ -7,6 +7,18 @@
     padding-bottom: var(--offset-medium-large);
   }
 
+  &__container {
+    display: flex;
+    gap: 134px;
+    justify-content: space-between;
+
+    @include big-desktop {
+      gap: var(--offset-large);
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
   &__content {
     max-width: 686px;
   }
@@ -29,14 +41,5 @@
 
   &__link {
     padding: 12px var(--offset-medium);
-  }
-
-  .swiper-slide {
-    max-width: 686px;
-
-    @include tablet {
-      max-width: 100%;
-      width: 100%;
-    }
   }
 }

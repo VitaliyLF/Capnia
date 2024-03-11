@@ -25,9 +25,8 @@ const pageHeroSlider = new Swiper('.page-hero__swiper', {
     crossFade: true,
   },
   autoplay: {
-    delay: 2400,
+    delay: 5000,
     disableOnInteraction: false,
-    pauseOnMouseEnter: true,
   },
   pagination: {
     el: '.page-hero__swiper-pagination',
@@ -131,39 +130,6 @@ new Swiper('.jaundice__swiper', {
     enabled: true,
     onlyInViewport: true,
     pageUpDown: true,
-  },
-})
-
-new Swiper('.jaundice-treatment__swiper', {
-  speed: 500,
-  simulateTouch: false,
-  a11y: {
-    enabled: true,
-    prevSlideMessage: 'Previous slide',
-    nextSlideMessage: 'Next slide',
-    firstSlideMessage: 'This is the first slide',
-    lastSlideMessage: 'This is the last slide',
-    paginationBulletMessage: 'Go to slide {{index}}',
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1.2,
-      spaceBetween: gapMedium,
-    },
-    576: {
-      slidesPerView: 1.3,
-    },
-    768: {
-      slidesPerView: 1.4,
-      spaceBetween: gapLarge,
-      allowTouchMove: true,
-    },
-    1024: {
-      slidesPerView: 2,
-      spaceBetween: gapHuge,
-      simulateTouch: true,
-      allowTouchMove: false,
-    },
   },
 })
 

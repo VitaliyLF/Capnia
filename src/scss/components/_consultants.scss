@@ -30,6 +30,8 @@
   }
 
   .consultants-image {
+    aspect-ratio: 1;
+    object-position: top;
     margin-bottom: var(--offset-medium);
     border-radius: var(--border-radius-medium);
 

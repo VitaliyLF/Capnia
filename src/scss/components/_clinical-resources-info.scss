@@ -314,6 +314,15 @@
           }
         }
 
+        ul {
+          list-style: disc;
+          padding-left: var(--offset-small);
+
+          li {
+            @include marginBottom(5px);
+          }
+        }
+
         span {
           @include marginBottom(16px);
 

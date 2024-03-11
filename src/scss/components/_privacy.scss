@@ -13,8 +13,6 @@
   &__title {
     @include marginBottom(var(--offset-medium-large));
 
-    text-align: center;
-
     @include mobile {
       @include marginBottom(var(--offset-medium));
     }
@@ -43,9 +41,5 @@
 
   &__info-uppercase {
     @include marginBottom(var(--offset-small));
-
-    p {
-      text-transform: uppercase;
-    }
   }
 }

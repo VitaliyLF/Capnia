@@ -14,7 +14,7 @@
     background-color var(--timing) ease, transform var(--timing) ease;
 
   &::backdrop {
-    background-color: #58595b;
+    background-color: rgba(0, 0, 0, 0.4);
     cursor: pointer;
   }
 
@@ -36,7 +36,7 @@
   }
 
   &__modal-content {
-    padding: var(--offset-huge) var(--offset-large);
+    padding: var(--offset-medium-huge) var(--offset-large);
     border-radius: var(--offset-medium);
     background-color: var(--lighter-blue);
     display: flex;
