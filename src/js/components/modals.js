@@ -1,34 +1,53 @@
+import { disableScroll } from '../functions/disable-scroll'
+import { enableScroll } from '../functions/enable-scroll'
+
 const modals = document.querySelectorAll('.js-modal')
 const openModals = document.querySelectorAll('.js-open-modal')
 const closeModals = document.querySelectorAll('.js-close-modal')
 
-const openModalHundler = (modal) => {
+const openModalHandler = (modal) => {
+  disableScroll()
   modal.showModal()
 }
 
-const closeModalHundler = (modal) => {
+const closeModalHandler = (modal) => {
+  modal.addEventListener('close', () => {
+    enableScroll()
+  })
+
   modal.close()
 }
 
+const closeModalOnEsc = (e) => {
+  if (e.key === 'Escape') {
+    const openModal = document.querySelector('.js-modal[open]')
+    if (openModal) {
+      closeModalHandler(openModal)
+    }
+  }
+}
+
+document.addEventListener('keydown', closeModalOnEsc)
+
 openModals.forEach((openModal, index) => {
   openModal.addEventListener('click', () => {
-    openModalHundler(modals[index])
+    openModalHandler(modals[index])
   })
 })
 
 closeModals.forEach((closeModal, index) => {
   closeModal.addEventListener('click', () => {
-    closeModalHundler(modals[index])
+    closeModalHandler(modals[index])
   })
 })
 
 modals.forEach((modal) => {
   modal.addEventListener('click', (e) => {
     const dialogModal = e.currentTarget
-    const isClickedOnBackDrop = e.target === dialogModal
+    const isClickedOnBackdrop = e.target === dialogModal
 
-    if (isClickedOnBackDrop) {
-      closeModalHundler(dialogModal)
+    if (isClickedOnBackdrop) {
+      closeModalHandler(dialogModal)
     }
   })
 })
