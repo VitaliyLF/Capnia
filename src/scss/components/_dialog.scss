@@ -81,11 +81,7 @@
     display: block;
     width: 27px;
     aspect-ratio: 1;
-    fill: var(--color-light);
-
-    @include tablet {
-      fill: var(--color-black);
-    }
+    fill: var(--color-black);
   }
 
   &__modal-info {

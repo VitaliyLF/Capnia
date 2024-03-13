@@ -57,6 +57,9 @@
     position: relative;
 
     &--dropdown {
+      // padding-bottom: 28px;
+      // margin-bottom: -28px;
+
       @include hover {
         & .dropdown {
           opacity: 1;

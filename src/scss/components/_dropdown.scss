@@ -1,8 +1,6 @@
 .dropdown {
-  background-color: var(--light-grey);
-  padding: var(--offset-medium);
   position: absolute;
-  margin-top: 28px;
+  padding-top: 28px;
   top: 100%;
   right: calc(var(--offset-medium) * -1);
   opacity: 0;
@@ -14,9 +12,7 @@
   @include big-desktop {
     position: static;
     display: none;
-    margin-top: 0;
-    padding: var(--offset-medium) 0 0 var(--offset-medium);
-    background-color: transparent;
+    padding-top: 0;
   }
 
   &--active {
@@ -25,6 +21,16 @@
 
     @include big-desktop {
       display: block;
+    }
+  }
+
+  &__wrapper {
+    background-color: var(--light-grey);
+    padding: var(--offset-medium);
+
+    @include big-desktop {
+      background-color: transparent;
+      padding: var(--offset-medium) 0 0 var(--offset-medium);
     }
   }
 

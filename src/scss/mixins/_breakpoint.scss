@@ -1,3 +1,9 @@
+@mixin huge-desktop {
+  @media (max-width: (1520px)) {
+    @content;
+  }
+}
+
 @mixin big-desktop {
   @media (max-width: (1370px)) {
     @content;

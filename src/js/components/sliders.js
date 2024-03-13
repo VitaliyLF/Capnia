@@ -9,7 +9,6 @@ import {
 } from 'swiper/modules'
 
 const bodyStyle = window.getComputedStyle(document.body)
-const gapHuge = parseInt(bodyStyle.getPropertyValue('--offset-huge'))
 const gapLarge = parseInt(bodyStyle.getPropertyValue('--offset-large'))
 const gapMedium = parseInt(bodyStyle.getPropertyValue('--offset-medium'))
 const isMobileViewPort = () => window.innerWidth < 1370
@@ -163,14 +162,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     breakpoint.addEventListener('change', checker)
     checker()
-  }
-
-  const someFunc = (instance) => {
-    if (instance) {
-      instance.on('slideChange', function (e) {
-        console.log('*** mySwiper.activeIndex', instance.activeIndex)
-      })
-    }
   }
 
   resizableSwiper('(max-width: 1370px)', '.consultants__swiper', {

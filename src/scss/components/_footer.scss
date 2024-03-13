@@ -74,6 +74,23 @@
         background: url(../img/linkedIn-icon.svg) center/cover no-repeat;
       }
     }
+
+    &--bilitool {
+      border-radius: var(--border-radius-medium-small);
+      background-color: var(--bilitool-color);
+      padding: 10px var(--offset-small);
+
+      &::after {
+        display: block;
+        content: url(../img/bilitool-icon.svg);
+        width: 132px;
+        height: 39px;
+      }
+
+      @include hover {
+        background-color: var(--bilitool-color-hover);
+      }
+    }
   }
 
   &__contact {
@@ -196,13 +213,13 @@
   }
 
   .footer-link {
-    display: block;
+    display: inline-block;
     font-weight: 700;
     font-size: 18px;
     line-height: 167%;
     letter-spacing: -0.01em;
     color: var(--color-light);
-    transition: color var(--timing) ease;
+    transition: color var(--timing) ease, background-color var(--timing) ease;
 
     @include hover {
       color: var(--yellow);
