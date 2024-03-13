@@ -22,12 +22,4 @@ export const isDesktop = () => {
   return false
 }
 
-export const isHugeDesktop = () => {
-  if (window.innerWidth < 1520) {
-    return true
-  }
-
-  return false
-}
-
 export const isMobileViewPort = () => window.innerWidth > 865
