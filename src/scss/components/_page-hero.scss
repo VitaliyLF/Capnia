@@ -40,7 +40,7 @@
     }
 
     @include mobile {
-      gap: var(--offset-medium) 0;
+      align-items: start;
     }
 
     &--about {
@@ -73,6 +73,9 @@
 
     @include mobile {
       @include marginBottom(0);
+
+      font-size: 25px;
+      line-height: 120%;
     }
 
     @include small-mobile {
@@ -108,6 +111,9 @@
 
     @include mobile {
       @include marginBottom(var(--offset-small));
+
+      margin-top: 16px;
+      font-size: 16px;
     }
 
     &--products {
@@ -257,6 +263,11 @@
         top: var(--page-hero-inner-height) !important;
         height: var(--offset-medium);
         margin-top: var(--offset-medium-large);
+      }
+
+      @include mobile {
+        margin-top: 0;
+        height: var(--offset-small);
       }
     }
   }
