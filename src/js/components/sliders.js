@@ -23,10 +23,10 @@ const pageHeroSlider = new Swiper('.page-hero__swiper', {
   fadeEffect: {
     crossFade: true,
   },
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: '.page-hero__swiper-pagination',
     type: 'bullets',
