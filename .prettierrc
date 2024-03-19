@@ -2,5 +2,9 @@
   "semi": false,
   "singleQuote": true,
   "endOfLine": "auto",
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "printWidth": 120,
+  "trailingComma": "none",
+  "bracketSameLine": true,
+  "jsxBracketSameLine": true
 }

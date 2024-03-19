@@ -7,41 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="theme-color" content="#111111" />
     <title>Capnia products</title>
-    <link
-      rel="preload"
-      href="fonts/WorkSansRegular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="fonts/WorkSansMedium.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="fonts/WorkSansBold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="fonts/BarlowRegular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="fonts/BarlowBold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <link rel="preload" href="fonts/WorkSansRegular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/WorkSansMedium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/WorkSansBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/BarlowRegular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/BarlowBold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="css/vendor.css" />
     <link rel="stylesheet" href="css/main.css" />
     <script defer src="js/main.js"></script>
@@ -52,10 +22,8 @@
     <div class="site-container">
       @include('../partials/header.html')
       <main class="page__main" id="main-product">
-        @include('../partials/page-hero-products.html')
-        @include('../partials/monitoring-products.html')
-        @include('../partials/hemolytic-status.html')
-        @include('../partials/sensalyze.html')
+        @include('../partials/page-hero-products.html') @include('../partials/monitoring-products.html')
+        @include('../partials/hemolytic-status.html') @include('../partials/sensalyze.html')
         @include('../partials/clinical-study.html')
       </main>
       @include('../partials/footer.html')
