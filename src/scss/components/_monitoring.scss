@@ -24,6 +24,23 @@
     max-width: 1279px;
     text-align: center;
 
+    i {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+
+      span {
+        font-style: normal;
+        font-size: 20px;
+        padding-bottom: 10px;
+        line-height: 1;
+
+        @include mobile {
+          font-size: 15px;
+        }
+      }
+    }
+
     @include big-desktop {
       @include marginBottom(50px);
 
@@ -55,8 +72,7 @@
       position: absolute;
       top: -106px;
       left: 200px;
-      background: url('../img/decor-black-bg.svg') center right 10px / cover
-        no-repeat;
+      background: url('../img/decor-black-bg.svg') center right 10px / cover no-repeat;
       width: 720px;
       aspect-ratio: 1;
       z-index: -2;
@@ -116,6 +132,23 @@
 
     p {
       @include marginBottom(var(--offset-medium));
+
+      i {
+        display: inline-flex;
+        align-items: center;
+        gap: 2px;
+
+        span {
+          font-style: normal;
+          font-size: 14px;
+          padding-bottom: 5px;
+          line-height: 1;
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
     }
 
     ul {

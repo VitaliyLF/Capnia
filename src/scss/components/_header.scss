@@ -77,6 +77,23 @@
     color: var(--deep-blue);
     transition: color var(--timing) ease;
 
+    i {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+
+      span {
+        font-style: normal;
+        font-size: 14px;
+        padding-bottom: 5px;
+        line-height: 1;
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+    }
+
     @include hover {
       color: var(--dark-grey);
     }
@@ -95,8 +112,7 @@
       color: var(--color-light);
       background-color: var(--deep-blue);
       border-radius: var(--border-radius-small);
-      transition: background-color var(--timing) ease, color var(--timing) ease,
-        border var(--timing) ease;
+      transition: background-color var(--timing) ease, color var(--timing) ease, border var(--timing) ease;
 
       @include hover {
         color: var(--color-light);

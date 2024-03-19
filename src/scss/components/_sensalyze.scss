@@ -42,6 +42,23 @@
     p {
       @include marginBottom(var(--offset-medium));
 
+      i {
+        display: inline-flex;
+        align-items: center;
+        gap: 2px;
+
+        span {
+          font-style: normal;
+          font-size: 14px;
+          padding-bottom: 5px;
+          line-height: 1;
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
+
       @include mobile {
         @include marginBottom(var(--offset-small));
       }

@@ -1,12 +1,5 @@
 import Swiper from 'swiper'
-import {
-  Pagination,
-  Navigation,
-  A11y,
-  Keyboard,
-  Autoplay,
-  EffectFade,
-} from 'swiper/modules'
+import { Pagination, Navigation, A11y, Keyboard, Autoplay, EffectFade } from 'swiper/modules'
 
 const bodyStyle = window.getComputedStyle(document.body)
 const gapLarge = parseInt(bodyStyle.getPropertyValue('--offset-large'))
@@ -21,16 +14,17 @@ const pageHeroSlider = new Swiper('.page-hero__swiper', {
   speed: 500,
   effect: 'fade',
   fadeEffect: {
-    crossFade: true,
+    crossFade: true
   },
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
+    pauseOnMouseEnter: true
   },
   pagination: {
     el: '.page-hero__swiper-pagination',
     type: 'bullets',
-    clickable: true,
+    clickable: true
   },
   a11y: {
     enabled: true,
@@ -38,12 +32,35 @@ const pageHeroSlider = new Swiper('.page-hero__swiper', {
     nextSlideMessage: 'Next slide',
     firstSlideMessage: 'This is the first slide',
     lastSlideMessage: 'This is the last slide',
-    paginationBulletMessage: 'Go to slide {{index}}',
+    paginationBulletMessage: 'Go to slide {{index}}'
   },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
-    pageUpDown: true,
+    pageUpDown: true
+  },
+  breakpoints: {
+    320: {
+      autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false
+      }
+    },
+    576: {
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false
+      }
+    },
+    1370: {
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      }
+    }
   },
   on: {
     init: function () {
@@ -51,8 +68,8 @@ const pageHeroSlider = new Swiper('.page-hero__swiper', {
     },
     slideChange: function () {
       updatePaginationHeight.call(this)
-    },
-  },
+    }
+  }
 })
 
 let resizeInterval
@@ -61,7 +78,7 @@ function startResizeListener() {
   if (!resizeInterval) {
     resizeInterval = setInterval(function () {
       updatePaginationHeight.call(pageHeroSlider)
-    }, 10)
+    }, 100)
   }
 }
 
@@ -75,18 +92,12 @@ function updatePaginationHeight() {
     if (activeSlide) {
       const pageHeroTitleHeight = activeSlide.querySelector('.page-hero__title')
       const pageHeroImage = activeSlide.querySelector('.page-hero__images')
-      const pageHeroPagination = document.querySelector(
-        '.page-hero__swiper-pagination'
-      )
+      const pageHeroPagination = document.querySelector('.page-hero__swiper-pagination')
 
       if (pageHeroTitleHeight && pageHeroImage) {
-        const pageHeroHeightTop =
-          pageHeroTitleHeight.clientHeight + pageHeroImage.clientHeight
+        const pageHeroHeightTop = pageHeroTitleHeight.clientHeight + pageHeroImage.clientHeight
 
-        pageHeroPagination.style.setProperty(
-          '--page-hero-inner-height',
-          pageHeroHeightTop + 'px'
-        )
+        pageHeroPagination.style.setProperty('--page-hero-inner-height', pageHeroHeightTop + 'px')
       }
     }
   }
@@ -105,17 +116,17 @@ new Swiper('.jaundice__swiper', {
   speed: 500,
   effect: 'fade',
   fadeEffect: {
-    crossFade: true,
+    crossFade: true
   },
   autoplay: {
     delay: 2400,
     disableOnInteraction: false,
-    pauseOnMouseEnter: true,
+    pauseOnMouseEnter: true
   },
   pagination: {
     el: '.jaundice__swiper-pagination',
     type: 'bullets',
-    clickable: true,
+    clickable: true
   },
   a11y: {
     enabled: true,
@@ -123,22 +134,17 @@ new Swiper('.jaundice__swiper', {
     nextSlideMessage: 'Next slide',
     firstSlideMessage: 'This is the first slide',
     lastSlideMessage: 'This is the last slide',
-    paginationBulletMessage: 'Go to slide {{index}}',
+    paginationBulletMessage: 'Go to slide {{index}}'
   },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
-    pageUpDown: true,
-  },
+    pageUpDown: true
+  }
 })
 
 window.addEventListener('DOMContentLoaded', () => {
-  const resizableSwiper = (
-    breakpoint,
-    swiperClass,
-    swiperSettings,
-    callback
-  ) => {
+  const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
     let swiper
 
     breakpoint = window.matchMedia(breakpoint)
@@ -173,27 +179,27 @@ window.addEventListener('DOMContentLoaded', () => {
       nextSlideMessage: 'Next slide',
       firstSlideMessage: 'This is the first slide',
       lastSlideMessage: 'This is the last slide',
-      paginationBulletMessage: 'Go to slide {{index}}',
+      paginationBulletMessage: 'Go to slide {{index}}'
     },
     breakpoints: {
       320: {
         slidesPerView: 1.2,
-        spaceBetween: gapMedium,
+        spaceBetween: gapMedium
       },
       576: {
         slidesPerView: 1.2,
-        spaceBetween: gapMedium,
+        spaceBetween: gapMedium
       },
       768: {
         slidesPerView: 2.2,
-        spaceBetween: gapMedium,
+        spaceBetween: gapMedium
       },
       1024: {
         slidesPerView: 2.5,
         spaceBetween: gapLarge,
-        simulateTouch: true,
-      },
-    },
+        simulateTouch: true
+      }
+    }
   })
 })
 
@@ -201,7 +207,7 @@ new Swiper('.hemolytic-status__swiper', {
   speed: 500,
   navigation: {
     nextEl: '.hemolytic-status__next',
-    prevEl: '.hemolytic-status__prev',
+    prevEl: '.hemolytic-status__prev'
   },
   a11y: {
     enabled: true,
@@ -209,31 +215,31 @@ new Swiper('.hemolytic-status__swiper', {
     nextSlideMessage: 'Next slide',
     firstSlideMessage: 'This is the first slide',
     lastSlideMessage: 'This is the last slide',
-    paginationBulletMessage: 'Go to slide {{index}}',
+    paginationBulletMessage: 'Go to slide {{index}}'
   },
   keyboard: {
     enabled: true,
     onlyInViewport: true,
-    pageUpDown: true,
+    pageUpDown: true
   },
   breakpoints: {
     320: {
       slidesPerView: 1.2,
-      spaceBetween: gapMedium,
+      spaceBetween: gapMedium
     },
     576: {
       slidesPerView: 1.4,
-      spaceBetween: gapMedium,
+      spaceBetween: gapMedium
     },
     1024: {
       slidesPerView: 1.5,
       navigation: false,
-      spaceBetween: gapMedium,
+      spaceBetween: gapMedium
     },
     1370: {
       slidesPerView: 1,
-      spaceBetween: 0,
-    },
+      spaceBetween: 0
+    }
   },
   on: {
     init: function () {
@@ -252,6 +258,6 @@ new Swiper('.hemolytic-status__swiper', {
         prevButton.style.opacity = '0'
         prevButton.style.visibility = 'hidden'
       }
-    },
-  },
+    }
+  }
 })

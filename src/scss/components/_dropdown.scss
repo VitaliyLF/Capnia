@@ -5,8 +5,7 @@
   right: calc(var(--offset-medium) * -1);
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--timing) ease-in-out,
-    visibility var(--timing) ease-in-out;
+  transition: opacity var(--timing) ease-in-out, visibility var(--timing) ease-in-out;
   z-index: var(--dropdown-nav-z-index);
 
   @include big-desktop {
@@ -26,7 +25,7 @@
 
   &__wrapper {
     background-color: var(--light-grey);
-    padding: var(--offset-medium);
+    padding: var(--offset-medium) 19px;
 
     @include big-desktop {
       background-color: transparent;
@@ -60,19 +59,28 @@
     }
 
     &--studies {
-      display: inline-flex;
+      display: inline-block;
     }
   }
 
   &__link-text {
-    position: relative;
-    font-style: italic;
-    font-size: 14px;
+    display: inline-flex;
+    font-size: 15px;
 
-    &::after {
-      content: '®';
-      padding-right: 4px;
-      font-style: normal;
+    i {
+      display: inline-flex;
+      align-items: start;
+      gap: 2px;
+
+      span {
+        font-style: normal;
+        font-size: 14px;
+        line-height: 1;
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
     }
 
     @include big-desktop {

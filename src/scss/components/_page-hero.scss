@@ -87,6 +87,39 @@
         @include marginBottom(var(--offset-medium));
       }
     }
+
+    i {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+
+      span {
+        font-style: normal;
+        font-size: 20px;
+        padding-bottom: 15px;
+        line-height: 1;
+
+        @include mobile {
+          font-size: 15px;
+        }
+      }
+    }
+
+    mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+
+      span {
+        font-size: 25px;
+        padding-bottom: 15px;
+        line-height: 1;
+
+        @include mobile {
+          font-size: 15px;
+        }
+      }
+    }
   }
 
   &__inner {
@@ -119,11 +152,17 @@
     &--products {
       @include mobile {
         @include marginBottom(var(--offset-medium));
+
+        margin-top: 0;
       }
     }
 
     &--about {
       color: var(--color-black);
+
+      @include mobile {
+        margin-top: 0;
+      }
     }
 
     p {
@@ -131,6 +170,23 @@
 
       @include mobile {
         @include marginBottom(var(--offset-small));
+      }
+
+      i {
+        display: inline-flex;
+        align-items: center;
+        gap: 2px;
+
+        span {
+          font-style: normal;
+          font-size: 14px;
+          padding-bottom: 5px;
+          line-height: 1;
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
       }
     }
 
@@ -190,7 +246,6 @@
     }
 
     &--about {
-      mix-blend-mode: multiply;
       padding: var(--offset-medium-huge);
 
       @include big-desktop {
@@ -233,6 +288,12 @@
 
     &--about {
       object-fit: fill;
+      top: 0;
+      left: 0;
+      translate: 0 0;
+      width: auto;
+      height: 100%;
+      z-index: 0;
     }
   }
 
@@ -243,6 +304,16 @@
     &--products {
       position: relative;
       border-radius: 0;
+      max-width: 613px;
+      z-index: 1;
+
+      @include big-desktop {
+        max-width: 100%;
+      }
+    }
+
+    &--about {
+      position: relative;
       max-width: 613px;
       z-index: 1;
 
