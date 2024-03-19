@@ -42,7 +42,7 @@ const pageHeroSlider = new Swiper('.page-hero__swiper', {
   breakpoints: {
     320: {
       autoplay: {
-        delay: 10000,
+        delay: 12000,
         disableOnInteraction: false,
         pauseOnMouseEnter: false
       }

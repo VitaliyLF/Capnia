@@ -60,6 +60,7 @@
   .swiper-wrapper {
     flex-wrap: wrap;
     gap: var(--offset-large);
+    padding-bottom: 2px;
 
     @include big-desktop {
       flex-wrap: nowrap;
