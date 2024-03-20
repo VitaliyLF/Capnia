@@ -27,7 +27,7 @@
     margin-bottom: var(--offset-large);
 
     @include big-desktop {
-      gap: 0;
+      gap: var(--offset-large) 0;
       justify-content: space-between;
     }
 
@@ -35,7 +35,8 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      gap: var(--offset-large) 0;
+      gap: var(--offset-medium) 0;
+      margin-bottom: var(--offset-medium-large);
     }
   }
 
@@ -72,23 +73,6 @@
         width: var(--offset-medium);
         aspect-ratio: 1;
         background: url(../img/linkedIn-icon.svg) center/cover no-repeat;
-      }
-    }
-
-    &--bilitool {
-      border-radius: var(--border-radius-medium-small);
-      background-color: var(--bilitool-color);
-      padding: 10px var(--offset-small);
-
-      &::after {
-        display: block;
-        content: url(../img/bilitool-icon.svg);
-        width: 132px;
-        height: 39px;
-      }
-
-      @include hover {
-        background-color: var(--bilitool-color-hover);
       }
     }
   }
@@ -223,6 +207,35 @@
 
     @include hover {
       color: var(--yellow);
+    }
+  }
+
+  .bilitool {
+    border-radius: var(--border-radius-medium-small);
+    background-color: var(--bilitool-color);
+    padding: 10px var(--offset-small);
+
+    &::after {
+      display: block;
+      content: url(../img/bilitool-icon.svg);
+      width: 132px;
+      height: 39px;
+    }
+
+    @include hover {
+      background-color: var(--bilitool-color-hover);
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
     }
   }
 }
