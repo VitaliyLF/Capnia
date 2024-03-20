@@ -173,7 +173,7 @@
       top: calc(100% - var(--burger-line-height));
     }
 
-    .burger__line {
+    &-line {
       position: absolute;
       left: 0;
       top: 50%;
@@ -198,7 +198,7 @@
         transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
       }
 
-      & .burger__line {
+      & .header__burger-line {
         transform: scale(0);
         transition: transform 0.3s ease-in-out;
       }

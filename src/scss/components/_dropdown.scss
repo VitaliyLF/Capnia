@@ -73,6 +73,10 @@
       gap: 2px;
       padding-right: 2px;
 
+      @include big-desktop {
+        align-items: center;
+      }
+
       span {
         font-style: normal;
         font-size: 14px;

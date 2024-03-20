@@ -20,6 +20,7 @@
   &__iframe {
     display: block;
     width: 100%;
+    border: none;
     height: auto;
     aspect-ratio: 16 / 9;
     margin-bottom: var(--offset-medium-huge);
