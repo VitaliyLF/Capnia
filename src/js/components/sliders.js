@@ -119,7 +119,7 @@ new Swiper('.jaundice__swiper', {
     crossFade: true
   },
   autoplay: {
-    delay: 2400,
+    delay: 5000,
     disableOnInteraction: false,
     pauseOnMouseEnter: true
   },
@@ -140,6 +140,29 @@ new Swiper('.jaundice__swiper', {
     enabled: true,
     onlyInViewport: true,
     pageUpDown: true
+  },
+  breakpoints: {
+    320: {
+      autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false
+      }
+    },
+    576: {
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false
+      }
+    },
+    1370: {
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      }
+    }
   }
 })
 
